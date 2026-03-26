@@ -6,7 +6,7 @@ hidemenu::hidemenu( QWidget *parent)
     , ui(new Ui::hidemenu)
 {
     ui->setupUi(this);
-    setWindowFlags(Qt::SubWindow |Qt::FramelessWindowHint);
+    setWindowFlags(Qt::Tool |Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 }
 

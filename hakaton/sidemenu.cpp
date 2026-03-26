@@ -7,7 +7,7 @@ sidemenu::sidemenu(QWidget *parent)
 {
     ui->setupUi(this);
     SetInterFont();
-    setWindowFlags(Qt::SubWindow | Qt::FramelessWindowHint);
+    setWindowFlags(Qt::Tool | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 }
 
