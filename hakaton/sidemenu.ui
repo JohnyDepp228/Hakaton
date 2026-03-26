@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>sidemenu</class>
+ <widget class="QWidget" name="sidemenu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>391</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#frame 
+ {
+	border: none;
+    background-color: #2D2D2D;
+	border: none; 
+	outline: none;
+}</string>
+  </property>
+  <widget class="QPushButton" name="newchat">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>117</y>
+     <width>321</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>321</width>
+     <height>52</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>321</width>
+     <height>52</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#newchat {
+    border: 2px solid rgb(45, 45, 45);
+    border-radius: 24px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(85, 119, 0);
+}
+#newchat:pressed {
+    border: 2px solid rgb(94, 112, 53);
+    border-radius: 24px;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Новый чат</string>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/res/img/plus.jpg</normaloff>:/res/img/plus.jpg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>21</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="days">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>28</x>
+     <y>196</y>
+     <width>53</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>53</width>
+     <height>19</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>53</width>
+     <height>19</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(162, 161, 166);
+background-color: rgb(45, 45, 45);
+background-color: transparent;</string>
+   </property>
+   <property name="text">
+    <string>7 Days      </string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="history1">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>233</y>
+     <width>321</width>
+     <height>163</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>321</width>
+     <height>163</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>321</width>
+     <height>162</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame{
+    border: 2px solid rgb(94, 112, 53); 
+    color: rgb(59, 59, 59);
+    border-radius: 14px;
+	background-color: rgb(59, 59, 59);
+}
+QFrame:hover {
+ border: 2px solid rgb(165, 236, 0); 
+    color: rgb(59, 59, 59);
+    border-radius: 14px;
+background-color: rgb(59, 59, 59);
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_8">
+    <item>
+     <widget class="QLabel" name="img">
+      <property name="styleSheet">
+       <string notr="true">border: none</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/res/img/close-up-green-leaves-nature.jpg</pixmap>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="text_history1">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="name">
+        <property name="styleSheet">
+         <string notr="true">border:none;
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Люпин</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="text_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>144</width>
+          <height>72</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Антракноз люпина.Гриб Colletotrichum lupini. Поражается все растение. На стеблях появляются вдавленные бурые...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="history1_2">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>408</y>
+     <width>321</width>
+     <height>163</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>321</width>
+     <height>163</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>321</width>
+     <height>162</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame{
+    border: 2px solid rgb(94, 112, 53); 
+    color: rgb(59, 59, 59);
+    border-radius: 14px;
+	background-color: rgb(59, 59, 59);
+}
+QFrame:hover {
+ border: 2px solid rgb(165, 236, 0); 
+    color: rgb(59, 59, 59);
+    border-radius: 14px;
+background-color: rgb(59, 59, 59);
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_9">
+    <item>
+     <widget class="QLabel" name="img_2">
+      <property name="styleSheet">
+       <string notr="true">border: none</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/res/img/close-up-green-leaves-nature.jpg</pixmap>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="text_history2">
+      <item>
+       <widget class="QLabel" name="name_2">
+        <property name="styleSheet">
+         <string notr="true">border:none;
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Сахарная свекла</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="text_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>144</width>
+          <height>104</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;Мучнистая роса свеклы.Гриб Erysiphe communis. На листьях и черешках появляется белый мучнистый налет...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="dataset_frame">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>583</y>
+     <width>321</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>321</width>
+     <height>53</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>321</width>
+     <height>53</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame{
+    border: 2px solid rgb(94, 112, 53); 
+    color: rgb(59, 59, 59);
+    border-radius: 14px;
+	background-color: rgb(59, 59, 59);
+}
+QFrame:hover {
+ border: 2px solid rgb(165, 236, 0); 
+    color: rgb(59, 59, 59);
+    border-radius: 14px;
+background-color: rgb(59, 59, 59);
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_12">
+    <item>
+     <widget class="QLabel" name="dataset_2">
+      <property name="styleSheet">
+       <string notr="true">border: none;
+color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Загружен датасет: C:ff</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="requets_frame">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>648</y>
+     <width>321</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>321</width>
+     <height>53</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>321</width>
+     <height>53</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame{
+    border: 2px solid rgb(94, 112, 53); 
+    color: rgb(59, 59, 59);
+    border-radius: 14px;
+	background-color: rgb(59, 59, 59);
+}
+QFrame:hover {
+ border: 2px solid rgb(165, 236, 0); 
+    color: rgb(59, 59, 59);
+    border-radius: 14px;
+background-color: rgb(59, 59, 59);
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_11">
+    <item>
+     <widget class="QLabel" name="requets">
+      <property name="styleSheet">
+       <string notr="true">border: none;
+color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Текстовый запрос: Тимофеевка</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="user">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>982</y>
+     <width>324</width>
+     <height>73</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>324</width>
+     <height>73</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>324</width>
+     <height>73</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#user{
+border: 1px solid  rgb(45, 45, 45);
+background-color: rgb(45, 45, 45);
+border-radius: 14px;
+}
+
+#user:hover{
+border: 1px solid rgb(68, 68, 68);
+background-color: rgb(68, 68, 68);
+border-radius: 14px;
+}
+
+
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_10">
+    <item>
+     <widget class="QLabel" name="label_10">
+      <property name="minimumSize">
+       <size>
+        <width>41</width>
+        <height>41</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>41</width>
+        <height>41</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+background-color: rgba(45, 45, 45,0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/res/img/logo.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="user_name">
+      <property name="minimumSize">
+       <size>
+        <width>159</width>
+        <height>21</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>159</width>
+        <height>21</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+border:none;
+background-color: rgba(45, 45, 45,0);</string>
+      </property>
+      <property name="text">
+       <string>Володя Шнырь</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="profile_info">
+      <property name="maximumSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+background-color: rgba(45, 45, 45,0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="union_2">
+   <property name="geometry">
+    <rect>
+     <x>317</x>
+     <y>42</y>
+     <width>31</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>31</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>31</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>21</x>
+     <y>33</y>
+     <width>44</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>44</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>44</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resources.qrc">:/res/img/logo.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>63</y>
+     <width>191</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(249, 250, 236);</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;YOUR FIELD'S DIGITAL SHIELD&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>31</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:none;
+color: rgb(103, 147, 0);
+</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;PLANTGUARD&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>minimenu</class>
+ <widget class="QWidget" name="minimenu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>282</width>
+    <height>114</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#minimenu {
+    border: 2px solid rgb(94, 112, 53);
+    background-color: rgb(94, 112, 53);
+    border-radius: 16px;
+}</string>
+  </property>
+  <widget class="QPushButton" name="settings">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>7</y>
+     <width>265</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#settings {
+	border: none;
+	color: rgb(255, 255, 255);
+	text-align: left;
+	border-radius: 9px;
+}
+
+#settings:hover{
+	border:none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(126, 149, 71);
+	text-align:left;
+	border-radius: 9;
+ }
+</string>
+   </property>
+   <property name="text">
+    <string>Настройка профиля</string>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="help">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>42</y>
+     <width>265</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#help {
+	border: none;
+	color: rgb(255, 255, 255);
+	text-align: left;
+	border-radius: 9px;
+}
+
+#help:hover{
+	border:none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(126, 149, 71);
+	text-align:left;
+	border-radius: 9;
+ }
+</string>
+   </property>
+   <property name="text">
+    <string>Помощь и Обратная связь</string>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="close">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>77</y>
+     <width>265</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#close {
+	border: none;
+	color: rgb(255, 255, 255);
+	text-align: left;
+	border-radius: 9px;
+}
+
+#close:hover{
+	border:none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(126, 149, 71);
+	text-align:left;
+	border-radius: 9;
+ }
+</string>
+   </property>
+   <property name="text">
+    <string>Выйти</string>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

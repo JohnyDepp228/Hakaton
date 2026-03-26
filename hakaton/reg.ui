@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>reg</class>
+ <widget class="QMainWindow" name="reg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>PLANETGUARD</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>0</y>
+      <width>960</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>960</width>
+      <height>1080</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>960</width>
+      <height>1080</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/res/img/close-up-green-leaves-nature.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>385</x>
+      <y>264</y>
+      <width>229</width>
+      <height>49</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>28</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+color: rgb(103, 147, 0);</string>
+    </property>
+    <property name="text">
+     <string>PLANTGUARD</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>339</x>
+      <y>278</y>
+      <width>44</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>44</width>
+      <height>44</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>44</width>
+      <height>44</height>
+     </size>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LayoutDirection::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/res/img/logo.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="password_field_2">
+    <property name="geometry">
+     <rect>
+      <x>318</x>
+      <y>408</y>
+      <width>325</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+color: rgb(255, 255, 255);
+border-radius: 24;
+ border: 2px solid rgb(103, 147, 0);
+padding-left: 17 px; 
+    text-align: left; 
+
+</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::EchoMode::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Пароль</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="policy">
+    <property name="geometry">
+     <rect>
+      <x>318</x>
+      <y>621</y>
+      <width>321</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Регистрируясь или входя в систему, вы соглашаетесь с&lt;span style=&quot; text-decoration: underline;&quot;&gt; Условия использования&lt;/span&gt; и &lt;span style=&quot; text-decoration: underline;&quot;&gt;Политика&lt;/span&gt; конфиденциальности от PlantGuard.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>385</x>
+      <y>304</y>
+      <width>229</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(249, 250, 236);</string>
+    </property>
+    <property name="text">
+     <string>YOUR FIELD'S DIGITAL SHIELD</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="login_field">
+    <property name="geometry">
+     <rect>
+      <x>318</x>
+      <y>340</y>
+      <width>325</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+color: rgb(255, 255, 255);
+border-radius: 24;
+ border: 2px solid rgb(103, 147, 0);
+padding-left: 17 px; 
+    text-align: left; 
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Адрес электронной почты</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reg_buttom">
+    <property name="geometry">
+     <rect>
+      <x>318</x>
+      <y>700</y>
+      <width>325</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>321</width>
+      <height>44</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LayoutDirection::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: rgb(85, 119, 0);
+ border: 2px solid  rgb(85, 119, 0);
+border-radius: 22;
+color: rgb(255, 255, 255);
+}
+
+QPushButton:hover  {
+  background-color: transparent;
+ 	border: 2px solid  rgb(85, 119, 0);
+	border-radius: 22;
+	color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string>Зарегистрироваться</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>21</width>
+      <height>21</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="password_confirm">
+    <property name="geometry">
+     <rect>
+      <x>318</x>
+      <y>476</y>
+      <width>325</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+color: rgb(255, 255, 255);
+border-radius: 24;
+ border: 2px solid rgb(103, 147, 0);
+padding-left: 17 px; 
+    text-align: left; 
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::EchoMode::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Подтвердить пароль</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="code">
+    <property name="geometry">
+     <rect>
+      <x>318</x>
+      <y>544</y>
+      <width>325</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+color: rgb(255, 255, 255);
+border-radius: 24;
+ border: 2px solid rgb(103, 147, 0);
+padding-left: 17 px; 
+    text-align: left; 
+
+</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::EchoMode::Normal</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Код</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="send_code">
+    <property name="geometry">
+     <rect>
+      <x>539</x>
+      <y>550</y>
+      <width>91</width>
+      <height>37</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+color: rgb(103, 147, 0);
+</string>
+    </property>
+    <property name="text">
+     <string>Отправить код</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="stic_on_code">
+    <property name="geometry">
+     <rect>
+      <x>526</x>
+      <y>560</y>
+      <width>14</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::VLine</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

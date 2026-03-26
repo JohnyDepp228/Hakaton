@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>PLANTGUARD</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LayoutDirection::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+background-color: rgb(30, 30, 30);</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>40</width>
+    <height>40</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="interact_frame">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>500</y>
+      <width>969</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>321</width>
+      <height>151</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>969</width>
+      <height>500</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+    border: 2px solid rgb(94, 112, 53); 
+    color: rgb(59, 59, 59);
+    border-radius: 27px;
+	background-color: rgb(59, 59, 59);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="text_hint">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>341</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>1000</width>
+       <height>29</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+color:rgb(255, 255, 255)</string>
+     </property>
+     <property name="text">
+      <string>Загрузите медиа</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="load_media">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>194</width>
+       <height>37</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>194</width>
+       <height>37</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>194</width>
+       <height>37</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+    border: 2px solid  rgb(138, 138, 138);
+    border-radius: 17px;
+	background-color: rgb(59, 59, 59);
+padding-left: 13px; 
+    text-align: left; 
+}
+QPushButton:hover  {
+ color: rgb(30, 30, 30);
+    border: 2px solid  rgb(30, 30, 30);
+    border-radius: 17px;
+	background-color: rgb(94, 112, 53);
+padding-left: 13px; 
+    text-align: left; 
+}
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>Загрузить медиа</string>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="load_folder">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>90</y>
+       <width>194</width>
+       <height>37</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>194</width>
+       <height>37</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>194</width>
+       <height>37</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+    border: 2px solid  rgb(138, 138, 138);
+    border-radius: 17px;
+	background-color: rgb(59, 59, 59);
+padding-left: 13px; 
+    text-align: left; 
+}
+QPushButton:hover  {
+ color: rgb(30, 30, 30);
+    border: 2px solid  rgb(30, 30, 30);
+    border-radius: 14px;
+	background-color: rgb(94, 112, 53);
+padding-left: 13px; 
+    text-align: left; 
+}
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>Выбрать папку с медиа</string>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="send_msg">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>90</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 20px;
+background-color: rgb(103, 147, 0);
+border-color: rgb(103, 147, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="how_can_help">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>423</y>
+      <width>451</width>
+      <height>62</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>451</width>
+      <height>44</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>451</width>
+      <height>62</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: rgb(30, 30, 30);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QFrame" name="frame_2">
+       <property name="styleSheet">
+        <string notr="true">border:none
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>44</width>
+          <height>44</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>44</width>
+          <height>44</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>44</width>
+          <height>44</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/res/img/logo.jpg</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>0</y>
+          <width>447</width>
+          <height>44</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>447</width>
+          <height>44</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>447</width>
+          <height>44</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>24</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Как я могу помочь Вам?</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="filenameplace" native="true">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>-40</y>
+      <width>969</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(30, 30, 30, 20);
+padding-left: 5px; </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="msgicon">
+    <property name="geometry">
+     <rect>
+      <x>1231</x>
+      <y>130</y>
+      <width>350</width>
+      <height>350</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(30, 30, 30, 20);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>img/close-up-green-leaves-nature.jpg</file>
+        <file>img/plus.jpg</file>
+        <file>img/logo.jpg</file>
+    </qresource>
+    <qresource prefix="/font">
+        <file>fonts/Inter-Italic-VariableFont_opsz,wght.ttf</file>
+        <file>fonts/Inter-VariableFont_opsz,wght.ttf</file>
+    </qresource>
+    <qresource prefix="/send_code">
+        <file>send_code.ps1</file>
+    </qresource>
+</RCC>
