@@ -581,7 +581,8 @@ background-color: rgba(45, 45, 45,0);</string>
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">border:none;</string>
+    <string notr="true">border:none;
+background-color: rgba(255, 255, 255,0);</string>
    </property>
    <property name="text">
     <string/>
@@ -621,6 +622,9 @@ background-color: rgba(45, 45, 45,0);</string>
    <property name="layoutDirection">
     <enum>Qt::LayoutDirection::RightToLeft</enum>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255,0);</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -644,7 +648,8 @@ background-color: rgba(45, 45, 45,0);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(249, 250, 236);</string>
+    <string notr="true">color: rgb(249, 250, 236);
+background-color: rgba(255, 255, 255,0);</string>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;YOUR FIELD'S DIGITAL SHIELD&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -667,12 +672,45 @@ background-color: rgba(45, 45, 45,0);</string>
    <property name="styleSheet">
     <string notr="true">border:none;
 color: rgb(103, 147, 0);
+background-color: rgba(255, 255, 255,0);
 </string>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;PLANTGUARD&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>391</width>
+     <height>1080</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+ background-color: #2D2D2D;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+  </widget>
+  <zorder>frame</zorder>
+  <zorder>newchat</zorder>
+  <zorder>days</zorder>
+  <zorder>history1</zorder>
+  <zorder>history1_2</zorder>
+  <zorder>dataset_frame</zorder>
+  <zorder>requets_frame</zorder>
+  <zorder>user</zorder>
+  <zorder>union_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
  </widget>
  <resources>
   <include location="resources.qrc"/>
