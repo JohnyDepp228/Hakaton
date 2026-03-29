@@ -37,5 +37,6 @@ void message::on_send_msg_clicked()
 {
     hide();
     clearLayout(lay);
+    emit mes();
 }
 

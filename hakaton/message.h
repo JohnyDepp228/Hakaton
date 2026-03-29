@@ -21,7 +21,8 @@ private slots:
     void clearLayout(QGridLayout *layout);
 
     void on_send_msg_clicked();
-
+signals:
+    void mes();
 private:
     Ui::message *ui;
     QGridLayout *lay;

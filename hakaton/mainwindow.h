@@ -9,6 +9,7 @@
 #include "message.h"
 #include "sidemenu.h"
 #include "hidemenu.h"
+#include <windows.h>
 
 
 QT_BEGIN_NAMESPACE
@@ -29,6 +30,9 @@ private slots:
     void on_load_media_clicked();
     void HideSide();
     void ShowSide();
+    void ShowMsg();
+    void SetMsgIcon(QString path);
+    void ShowAnswer();
 
 private:
     Ui::MainWindow *ui;

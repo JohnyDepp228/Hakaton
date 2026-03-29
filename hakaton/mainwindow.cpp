@@ -6,6 +6,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->mes->hide();
+    ui->answer->hide();
+    ui->answer->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     men = new sidemenu(this);
     hm = new hidemenu(this);
     hm->hide();
@@ -16,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     showFullScreen();
     connect(men, &sidemenu::UnionClicked, this, &MainWindow::HideSide);
     connect(hm, &hidemenu::UnionClicked, this, &MainWindow::ShowSide);
+    connect(m, &message::mes, this, &MainWindow::ShowMsg);
 }
 
 MainWindow::~MainWindow()
@@ -55,5 +59,28 @@ void MainWindow::ShowSide(){
     hm->hide();
     men->move(0,0);
     men->show();
+}
+
+void MainWindow::ShowMsg(){
+    SetMsgIcon(full_file_name);
+    ui->mes->show();
+    ShowAnswer();
+}
+
+void MainWindow::SetMsgIcon(QString path){
+    QPixmap pix(path);
+    ui->mes->setPixmap(pix.scaled(ui->mes->height(),ui->mes->width(),Qt::KeepAspectRatio));
+}
+
+void MainWindow::ShowAnswer(){
+    QFile f("C:/Users/Boss/Desktop/Hakaton/hakaton/Answer/answer.txt");
+    bool open = f.open(QIODevice::ReadOnly | QIODevice::Text);
+    if(open) {
+    QTextStream in(&f);
+    QString answer = in.readAll();
+    ui->answer->setText(answer);
+    ui->answer->show();
+    }
+    f.close();
 }
 

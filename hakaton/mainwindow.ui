@@ -275,6 +275,49 @@ QPushButton{
      </size>
     </property>
    </widget>
+   <widget class="QLabel" name="mes">
+    <property name="geometry">
+     <rect>
+      <x>1258</x>
+      <y>170</y>
+      <width>350</width>
+      <height>260</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="answer">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>484</y>
+      <width>859</width>
+      <height>324</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>answer</zorder>
+   <zorder>how_can_help</zorder>
+   <zorder>load_media</zorder>
+   <zorder>load_folder</zorder>
+   <zorder>mes</zorder>
   </widget>
  </widget>
  <resources>
