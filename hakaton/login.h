@@ -3,11 +3,9 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
-#include "reg.h"
 namespace Ui {
 class login;
 }
-class reg;
 class login : public QMainWindow
 {
     Q_OBJECT
@@ -25,7 +23,6 @@ private slots:
 
 private:
     Ui::login *ui;
-    reg *re;
 };
 
 #endif // LOGIN_H

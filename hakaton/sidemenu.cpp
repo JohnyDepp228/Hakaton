@@ -18,10 +18,7 @@ sidemenu::~sidemenu()
 
 void sidemenu::on_union_2_clicked()
 {
-    h = new hidemenu();
-    hide();
-    h->move(0,0);
-    h->show();
+    emit UnionClicked();
 }
 
 void sidemenu::SetInterFont()
@@ -36,10 +33,8 @@ void sidemenu::SetInterFont()
 
 void sidemenu::on_profile_info_clicked()
 {
-    ui3 = new minimenu();
-    ui3->setWindowFlags(Qt::Popup | Qt::FramelessWindowHint);
-    ui3->setAttribute(Qt::WA_TranslucentBackground);
-    ui3->move(110,860);
-    ui3->show();
+    min = new minimenu(this);
+    min->move(55,860);
+    min->show();
 }
 

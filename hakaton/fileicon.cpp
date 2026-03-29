@@ -6,6 +6,7 @@ FileIcon::FileIcon(QFrame *parent)
     , ui(new Ui::FileIcon)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::Tool | Qt::FramelessWindowHint);
 }
 
 FileIcon::~FileIcon()

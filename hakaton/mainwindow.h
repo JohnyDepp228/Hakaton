@@ -6,20 +6,16 @@
 #include <QFont>
 #include <QFileDialog>
 #include <QDir>
-#include <QGridLayout>
-#include "login.h"
-#include "minimenu.h"
-#include "fileicon.h"
-#include "hidemenu.h"
+#include "message.h"
 #include "sidemenu.h"
+#include "hidemenu.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
 }
 QT_END_NAMESPACE
-class hidemenu;
-class sidemenu;
 
 class MainWindow : public QMainWindow
 {
@@ -30,24 +26,16 @@ public:
     ~MainWindow();
 
 private slots:
-
     void on_load_media_clicked();
-
-    void on_send_msg_clicked();
-
-    void SetMsgIcon(QString path);
-
-    void clearLayout(QGridLayout *layout);
+    void HideSide();
+    void ShowSide();
 
 private:
     Ui::MainWindow *ui;
-    login *ui2;
-    QGridLayout *fplace;
     QString full_file_name;
     FileIcon *fname;
-    int heightBonusM;
-    int file_count;
+    message *m;
     hidemenu *hm;
-    sidemenu *s;
+    sidemenu *men;
 };
 #endif // MAINWINDOW_H

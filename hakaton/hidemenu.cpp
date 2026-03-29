@@ -7,7 +7,6 @@ hidemenu::hidemenu( QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(Qt::Tool |Qt::FramelessWindowHint);
-    setAttribute(Qt::WA_TranslucentBackground);
 }
 
 hidemenu::~hidemenu()
@@ -15,10 +14,8 @@ hidemenu::~hidemenu()
     delete ui;
 }
 
-void hidemenu::on_pushButton_2_clicked()
+void hidemenu::on_union_2_clicked()
 {
-    hide();
-    si = new sidemenu();
-    si->show();
+    emit UnionClicked();
 }
 

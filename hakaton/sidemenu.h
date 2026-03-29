@@ -2,13 +2,14 @@
 #define SIDEMENU_H
 
 #include <QWidget>
-#include "hidemenu.h"
+#include <QFontDatabase>
 #include "minimenu.h"
+
 
 namespace Ui {
 class sidemenu;
 }
-class hidemenu;
+
 class sidemenu : public QWidget
 {
     Q_OBJECT
@@ -20,13 +21,13 @@ public:
 private slots:
     void on_union_2_clicked();
     void SetInterFont();
-
     void on_profile_info_clicked();
+signals:
+    void UnionClicked();
 
 private:
     Ui::sidemenu *ui;
-    hidemenu *h;
-    minimenu *ui3;
+    minimenu *min;
 };
 
 #endif // SIDEMENU_H

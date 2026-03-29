@@ -2,12 +2,10 @@
 #define MENU_H
 
 #include <QMainWindow>
-#include "login.h"
 
 namespace Ui {
 class Menu;
 }
-
 class Menu : public QMainWindow
 {
     Q_OBJECT
@@ -24,7 +22,6 @@ private slots:
 
 private:
     Ui::Menu *ui;
-    login *ui1;
 };
 
 #endif // MENU_H

@@ -3,14 +3,13 @@
 
 #include <QWidget>
 #include <QFrame>
-#include "menu.h"
 #include <QPainter>
 #include <QStyleOption>
+#include "menu.h"
 
 namespace Ui {
 class minimenu;
 }
-
 class minimenu : public QWidget
 {
     Q_OBJECT
@@ -28,7 +27,7 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 private:
     Ui::minimenu *ui;
-    Menu *ui2;
+    Menu *m;
 };
 
 #endif // MINIMENU_H

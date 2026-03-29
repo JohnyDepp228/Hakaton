@@ -7,6 +7,7 @@ minimenu::minimenu(QWidget *parent)
 {
     ui->setupUi(this);
     setFocusPolicy(Qt::StrongFocus);
+    setWindowFlags(Qt::Popup);
 }
 
 minimenu::~minimenu()
@@ -22,12 +23,11 @@ void minimenu::paintEvent(QPaintEvent *event)
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
-
 void minimenu::on_settings_clicked()
 {
-    ui2 = new Menu();
-    ui2->move(800,300);
-    ui2->show();
+    m = new Menu(this);
+    m->move(804,300);
+    m->show();
 }
 
 

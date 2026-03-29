@@ -58,7 +58,7 @@ background-color: rgb(30, 30, 30);</string>
     <enum>QFrame::Shadow::Raised</enum>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="union_2">
    <property name="geometry">
     <rect>
      <x>118</x>

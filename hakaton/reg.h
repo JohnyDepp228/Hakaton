@@ -2,7 +2,6 @@
 #define REG_H
 
 #include <QMainWindow>
-#include "login.h"
 #include <QProcess>
 #include <QFile>
 #include <QDir>
@@ -11,7 +10,6 @@ namespace Ui {
 class reg;
 }
 
-class login;
 
 class reg : public QMainWindow
 {
@@ -29,7 +27,6 @@ private slots:
 
 private:
     Ui::reg *ui;
-    login *log;
     QString code;
 };
 

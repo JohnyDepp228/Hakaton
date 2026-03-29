@@ -7,8 +7,6 @@ Menu::Menu(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint);
-
-    setAttribute(Qt::WA_TranslucentBackground);
 }
 
 Menu::~Menu()
@@ -27,7 +25,5 @@ void Menu::on_close_clicked()
 void Menu::on_quit_acc_clicked()
 {
     hide();
-    ui1 = new login(this);
-    ui1->show();
 }
 
