@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include "reg.h"
+#include "mainwindow.h"
+
 namespace Ui {
 class login;
 }

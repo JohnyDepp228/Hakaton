@@ -29,6 +29,9 @@
    <iconset resource="resources.qrc">
     <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(30, 30, 30);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">

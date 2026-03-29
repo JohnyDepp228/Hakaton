@@ -21,7 +21,7 @@ outline: none;</string>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>22</x>
+     <x>21</x>
      <y>33</y>
      <width>44</width>
      <height>44</height>

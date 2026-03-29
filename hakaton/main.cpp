@@ -11,8 +11,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    // login l;
-    // l.show();
+    login l;
+    l.show();
     // FileIcon f;
     // f.show();
     // hidemenu h;
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     // r.show();
     // sidemenu s;
     // s.show();
-    MainWindow w;
-    w.show();
+    // MainWindow w;
+    // w.show();
     return a.exec();
 }

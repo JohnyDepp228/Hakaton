@@ -14,11 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#minimenu {
-    border: 2px solid rgb(94, 112, 53);
-    background-color: rgb(94, 112, 53);
-    border-radius: 16px;
-}</string>
+   <string notr="true">background-color: #2D2D2D;</string>
   </property>
   <widget class="QPushButton" name="settings">
    <property name="geometry">
@@ -38,6 +34,7 @@
     <string notr="true">#settings {
 	border: none;
 	color: rgb(255, 255, 255);
+	background-color:  rgb(94, 112, 53);
 	text-align: left;
 	border-radius: 9px;
 }
@@ -77,6 +74,7 @@
     <string notr="true">#help {
 	border: none;
 	color: rgb(255, 255, 255);
+	background-color:  rgb(94, 112, 53);
 	text-align: left;
 	border-radius: 9px;
 }
@@ -117,6 +115,7 @@
 	border: none;
 	color: rgb(255, 255, 255);
 	text-align: left;
+	background-color:  rgb(94, 112, 53);
 	border-radius: 9px;
 }
 
@@ -137,6 +136,31 @@
      <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
    </property>
   </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>282</width>
+     <height>114</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid rgb(94, 112, 53);
+    background-color: rgb(94, 112, 53);
+    border-radius: 16px;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+  </widget>
+  <zorder>frame</zorder>
+  <zorder>settings</zorder>
+  <zorder>help</zorder>
+  <zorder>close</zorder>
  </widget>
  <resources>
   <include location="resources.qrc"/>
