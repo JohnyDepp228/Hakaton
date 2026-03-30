@@ -82,9 +82,6 @@ void MainWindow::ShowAnswer(){
     ui->answer->setText(answer);
     ui->answer->show();
     }
-    else{
-        QMessageBox::warning(this,"File error","Can't create file");
-    }
     f.close();
 }
 
@@ -117,5 +114,6 @@ void MainWindow::Reset(){
             std::cout << "File deleted" << std::endl;
         }
     }
+    Createfile();
 }
 
