@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(hm, &hidemenu::UnionClicked, this, &MainWindow::ShowSide);
     connect(hm, &hidemenu::ResetScreen, this, &MainWindow::Reset);
     connect(m, &message::mes, this, &MainWindow::ShowMsg);
+    Createfile();
 }
 
 MainWindow::~MainWindow()
@@ -50,7 +51,6 @@ void MainWindow::on_load_media_clicked()
     }
 }
 
-
 void MainWindow::HideSide(){
     men->hide();
     hm->move(0,0);
@@ -75,17 +75,34 @@ void MainWindow::SetMsgIcon(QString path){
 }
 
 void MainWindow::ShowAnswer(){
-    QFile f("C:/Users/Boss/Desktop/Hakaton/hakaton/Answer/answer.txt");
-    bool open = f.open(QIODevice::ReadOnly | QIODevice::Text);
-    if(open) {
+    QFile f(full_path);
+    if(f.open(QIODevice::ReadOnly | QIODevice::Text)) {
     QTextStream in(&f);
     QString answer = in.readAll();
     ui->answer->setText(answer);
     ui->answer->show();
     }
+    else{
+        QMessageBox::warning(this,"File error","Can't create file");
+    }
     f.close();
 }
 
+
+void MainWindow::Createfile(){
+    QString appPath = QCoreApplication::applicationDirPath();
+    QString dirPath = appPath + "/Answer";
+    QDir dir;
+    if (!dir.exists(dirPath)) {
+        dir.mkpath(dirPath);
+    }
+    full_path = dirPath + "/answer.txt";
+    QFile f(full_path);
+    if(f.open(QIODevice::WriteOnly  | QIODevice::Text)){
+    f.write("Не чет не хочу");
+    f.close();
+    }
+}
 
 void MainWindow::Reset(){
     ShowSide();
@@ -94,5 +111,11 @@ void MainWindow::Reset(){
     ui->how_can_help->show();
     ui->load_media->move(801,515);
     ui->load_folder->move(1132,515);
+    if (!full_path.isEmpty()) {
+        QFile file(full_path);
+        if (file.remove()) {
+            std::cout << "File deleted" << std::endl;
+        }
+    }
 }
 

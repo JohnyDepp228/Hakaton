@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 #include <QFontDatabase>
 #include <QFont>
 #include <QFileDialog>
@@ -10,7 +11,7 @@
 #include "sidemenu.h"
 #include "hidemenu.h"
 #include <windows.h>
-
+#include <iostream>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -34,6 +35,7 @@ private slots:
     void SetMsgIcon(QString path);
     void ShowAnswer();
     void Reset();
+    void Createfile();
 
 private:
     Ui::MainWindow *ui;
@@ -42,5 +44,6 @@ private:
     message *m;
     hidemenu *hm;
     sidemenu *men;
+    QString full_path;
 };
 #endif // MAINWINDOW_H

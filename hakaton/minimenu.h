@@ -5,7 +5,10 @@
 #include <QFrame>
 #include <QPainter>
 #include <QStyleOption>
+#include <QFile>
+#include <QDir>
 #include "menu.h"
+#include <iostream>
 
 namespace Ui {
 class minimenu;
@@ -20,7 +23,6 @@ public:
 
 private slots:
     void on_settings_clicked();
-
     void on_close_clicked();
 
 protected:
@@ -28,6 +30,7 @@ protected:
 private:
     Ui::minimenu *ui;
     Menu *m;
+    QString full_path;
 };
 
 #endif // MINIMENU_H

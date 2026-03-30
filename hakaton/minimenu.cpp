@@ -30,9 +30,21 @@ void minimenu::on_settings_clicked()
     m->show();
 }
 
-
 void minimenu::on_close_clicked()
 {
-     QApplication::quit();
+    QString appPath = QCoreApplication::applicationDirPath();
+    QString dirPath = appPath + "/Answer";
+    QDir dir;
+    if (!dir.exists(dirPath)) {
+        dir.mkpath(dirPath);
+    }
+    full_path = dirPath + "/answer.txt";
+    if (!full_path.isEmpty()) {
+        QFile file(full_path);
+        if (file.remove()) {
+            std::cout << "File deleted!" << std::endl;
+        }
+    }
+    QApplication::quit();
 }
 
