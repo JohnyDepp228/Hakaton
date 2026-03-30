@@ -22,8 +22,10 @@ private slots:
     void on_union_2_clicked();
     void SetInterFont();
     void on_profile_info_clicked();
+    void on_newchat_clicked();
 signals:
     void UnionClicked();
+    void ResetScreen();
 
 private:
     Ui::sidemenu *ui;

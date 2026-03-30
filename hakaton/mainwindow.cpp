@@ -18,7 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
     m->hide();
     showFullScreen();
     connect(men, &sidemenu::UnionClicked, this, &MainWindow::HideSide);
+    connect(men, &sidemenu::ResetScreen, this, &MainWindow::Reset);
     connect(hm, &hidemenu::UnionClicked, this, &MainWindow::ShowSide);
+    connect(hm, &hidemenu::ResetScreen, this, &MainWindow::Reset);
     connect(m, &message::mes, this, &MainWindow::ShowMsg);
 }
 
@@ -82,5 +84,15 @@ void MainWindow::ShowAnswer(){
     ui->answer->show();
     }
     f.close();
+}
+
+
+void MainWindow::Reset(){
+    ShowSide();
+    ui->mes->hide();
+    ui->answer->hide();
+    ui->how_can_help->show();
+    ui->load_media->move(801,515);
+    ui->load_folder->move(1132,515);
 }
 

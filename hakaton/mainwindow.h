@@ -33,6 +33,7 @@ private slots:
     void ShowMsg();
     void SetMsgIcon(QString path);
     void ShowAnswer();
+    void Reset();
 
 private:
     Ui::MainWindow *ui;

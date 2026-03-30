@@ -19,3 +19,9 @@ void hidemenu::on_union_2_clicked()
     emit UnionClicked();
 }
 
+
+void hidemenu::on_pushButton_clicked()
+{
+    emit ResetScreen();
+}
+

@@ -16,8 +16,11 @@ public:
     ~hidemenu();
 signals:
     void UnionClicked();
+    void ResetScreen();
 private slots:
     void on_union_2_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::hidemenu *ui;

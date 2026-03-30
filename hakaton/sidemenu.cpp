@@ -38,3 +38,9 @@ void sidemenu::on_profile_info_clicked()
     min->show();
 }
 
+
+void sidemenu::on_newchat_clicked()
+{
+    emit ResetScreen();
+}
+
