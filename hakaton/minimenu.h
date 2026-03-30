@@ -18,7 +18,7 @@ class minimenu : public QWidget
     Q_OBJECT
 
 public:
-    explicit minimenu(QWidget *parent = nullptr);
+    explicit minimenu(QString str,QWidget *parent = nullptr);
     ~minimenu();
 
 private slots:
@@ -31,6 +31,7 @@ private:
     Ui::minimenu *ui;
     Menu *m;
     QString full_path;
+    QString email;
 };
 
 #endif // MINIMENU_H

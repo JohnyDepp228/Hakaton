@@ -1,12 +1,13 @@
 #include "sidemenu.h"
 #include "ui_sidemenu.h"
 
-sidemenu::sidemenu(QWidget *parent)
+sidemenu::sidemenu(QString str, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::sidemenu)
 {
     ui->setupUi(this);
     SetInterFont();
+    email = str;
     setWindowFlags(Qt::Tool | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 }
@@ -33,7 +34,7 @@ void sidemenu::SetInterFont()
 
 void sidemenu::on_profile_info_clicked()
 {
-    min = new minimenu(this);
+    min = new minimenu(email,this);
     min->move(55,860);
     min->show();
 }

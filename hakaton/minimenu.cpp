@@ -1,11 +1,12 @@
 #include "minimenu.h"
 #include "ui_minimenu.h"
 
-minimenu::minimenu(QWidget *parent)
+minimenu::minimenu(QString str, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::minimenu)
 {
     ui->setupUi(this);
+    email = str;
     setFocusPolicy(Qt::StrongFocus);
     setWindowFlags(Qt::Popup);
 }
@@ -25,7 +26,7 @@ void minimenu::paintEvent(QPaintEvent *event)
 
 void minimenu::on_settings_clicked()
 {
-    m = new Menu(this);
+    m = new Menu(email,this);
     m->move(804,300);
     m->show();
 }
@@ -47,4 +48,3 @@ void minimenu::on_close_clicked()
     }
     QApplication::quit();
 }
-

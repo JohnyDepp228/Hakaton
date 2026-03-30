@@ -1,5 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
+#include "menu.h"
 
 login::login(QWidget *parent)
     : QMainWindow(parent)
@@ -7,6 +8,9 @@ login::login(QWidget *parent)
 {
 
     ui->setupUi(this);
+    QString path = QCoreApplication::applicationDirPath() + "/Users.db";
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(path);
     showFullScreen();
 }
 
@@ -17,19 +21,23 @@ login::~login()
 
 void login::on_regestaration_clicked()
 {
-    reg *r = new reg();
+    reg *r = new reg(this);
     r->showFullScreen();
-    r->show();
-    hide();
 }
 
+void login::on_forgot_password_clicked()
+{
+    QMessageBox::information(this,"","adada");
+}
 
 void login::on_enter_clicked()
 {
-    if(ui->login_field->text() == "ar" && ui->password_field_2->text() == "1234"){
+    QString login = ui->login_field->text();
+    QString password = ui->password_field_2->text();
+    if(OpenDB(login,password)){
         ui->login_field->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(103, 147, 0); padding-left: 17 px; text-align: left;");
         ui->password_field_2->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(103, 147, 0); padding-left: 17 px; text-align: left;");
-        MainWindow *m = new MainWindow();
+        MainWindow *m = new MainWindow(login);
         m->show();
         hide();
     }
@@ -40,8 +48,21 @@ void login::on_enter_clicked()
 }
 
 
-void login::on_forgot_password_clicked()
-{
-    QMessageBox::information(this,"","adada");
-}
 
+
+bool login::OpenDB(QString login,QString password){
+    db.open();
+    bool access = false;
+    {
+        QSqlQuery show(db);
+        show.prepare("SELECT * FROM Users WHERE login = :val1 AND password = :val2");
+        show.bindValue(":val1",login);
+        show.bindValue(":val2",password);
+        if(show.exec() && show.next())
+        {
+            access = true;
+        }
+    }
+    db.close();
+    return access;
+}

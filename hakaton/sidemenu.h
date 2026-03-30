@@ -15,7 +15,7 @@ class sidemenu : public QWidget
     Q_OBJECT
 
 public:
-    explicit sidemenu(QWidget *parent = nullptr);
+    explicit sidemenu(QString str,QWidget *parent = nullptr);
     ~sidemenu();
 
 private slots:
@@ -30,6 +30,7 @@ signals:
 private:
     Ui::sidemenu *ui;
     minimenu *min;
+    QString email;
 };
 
 #endif // SIDEMENU_H

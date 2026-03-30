@@ -2,6 +2,9 @@
 #define MENU_H
 
 #include <QMainWindow>
+#include <QSqlDatabase>
+#include <QSql>
+#include <QSqlQuery>
 
 namespace Ui {
 class Menu;
@@ -11,8 +14,9 @@ class Menu : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Menu(QWidget *parent = nullptr);
+    explicit Menu(QString str,QWidget *parent = nullptr);
     ~Menu();
+
 
 
 private slots:
@@ -22,6 +26,7 @@ private slots:
 
 private:
     Ui::Menu *ui;
+    QString email;
 };
 
 #endif // MENU_H

@@ -1,8 +1,13 @@
 #ifndef LOGIN_H
 #define LOGIN_H
 
+
+#include <QSqlDatabase>
+#include <QSql>
+#include <QSqlQuery>
 #include <QMainWindow>
 #include <QMessageBox>
+#include <iostream>
 #include "reg.h"
 #include "mainwindow.h"
 
@@ -24,8 +29,11 @@ private slots:
 
     void on_forgot_password_clicked();
 
+    bool OpenDB(QString login,QString password);
+
 private:
     Ui::login *ui;
+    QSqlDatabase db;
 };
 
 #endif // LOGIN_H

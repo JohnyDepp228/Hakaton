@@ -1,10 +1,16 @@
 #ifndef REG_H
 #define REG_H
 
+
+#include <QSqlDatabase>
+#include <QSql>
+#include <QSqlQuery>
 #include <QMainWindow>
 #include <QProcess>
 #include <QFile>
 #include <QDir>
+#include <iostream>
+#include <QMessageBox>
 
 namespace Ui {
 class reg;
@@ -25,9 +31,14 @@ private slots:
 
     void on_send_code_clicked();
 
+    void CreateDB();
+
+    void AddToDB(QString login,QString password);
+
 private:
     Ui::reg *ui;
     QString code;
+    QSqlDatabase db;
 };
 
 #endif // REG_H

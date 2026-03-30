@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QString str, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->mes->hide();
     ui->answer->hide();
     ui->answer->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    men = new sidemenu(this);
+    men = new sidemenu(str,this);
     hm = new hidemenu(this);
     hm->hide();
     men->move(0,0);
