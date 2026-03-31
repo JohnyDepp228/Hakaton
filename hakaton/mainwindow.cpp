@@ -7,7 +7,7 @@ MainWindow::MainWindow(QString str, QWidget *parent)
 {
     user_name = str;
     ui->setupUi(this);
-    QString path = QCoreApplication::applicationDirPath() + "/Users.db";
+    QString path = QCoreApplication::applicationDirPath() + "/UsersHistrory.db";
     if (QSqlDatabase::contains("qt_sql_default_connection")) {
         db = QSqlDatabase::database("qt_sql_default_connection");
     } else {
@@ -137,7 +137,7 @@ void MainWindow::SaveImage(QString image_path){
     pix.save(&buffer,"PNG");
     {
     QSqlQuery AddImag(db);
-    AddImag.prepare("UPDATE Users SET image = :img WHERE login = :user");
+    AddImag.prepare("INSERT INTO UsersHistory (login,image, answer) VALUES (:user,:img,:msg) ");
     AddImag.bindValue(":user",user_name);
     AddImag.bindValue(":img",bytes);
     AddImag.exec();
@@ -149,8 +149,7 @@ void MainWindow::SaveText(QString answer){
     db.open();
     {
         QSqlQuery AddMsg(db);
-        AddMsg.prepare("UPDATE Users SET answer = :msg WHERE login = :user");
-        AddMsg.bindValue(":user",user_name);
+        AddMsg.prepare("UPDATE UsersHistory SET answer = :msg ");
         AddMsg.bindValue(":msg",answer);
         AddMsg.exec();
     }

@@ -76,10 +76,17 @@ void reg::CreateDB(){
         QSqlQuery query(db);
         QString str = "CREATE TABLE IF NOT EXISTS Users ("
                       "login TEXT NOT NULL, "
-                      "password TEXT NOT NULL,"
+                      "password TEXT NOT NULL);";
+        query.exec(str);
+
+        QString str1 = "CREATE TABLE IF NOT EXISTS UsersHistory ("
+                      "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                      "login TEXT NOT NULL, "
                       "image BLOB,"
                       "answer TEXT);";
-        query.exec(str);
+        query.exec(str1);
+
+
         db.close();
     }
 
