@@ -1,11 +1,16 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QFontDatabase>
 #include <QFont>
 #include <QFileDialog>
 #include <QDir>
+#include <QSqlDatabase>
+#include <QSql>
+#include <QSqlQuery>
+#include <QBuffer>
 #include "message.h"
 #include "sidemenu.h"
 #include "hidemenu.h"
@@ -35,6 +40,8 @@ private slots:
     void ShowAnswer();
     void Reset();
     void Createfile();
+    void SaveImage(QString image_path);
+    void SaveText(QString answer);
 
 private:
     Ui::MainWindow *ui;
@@ -44,5 +51,7 @@ private:
     hidemenu *hm;
     sidemenu *men;
     QString full_path;
+    QSqlDatabase db;
+    QString user_name;
 };
 #endif // MAINWINDOW_H

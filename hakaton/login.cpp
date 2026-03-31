@@ -9,8 +9,12 @@ login::login(QWidget *parent)
 
     ui->setupUi(this);
     QString path = QCoreApplication::applicationDirPath() + "/Users.db";
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName(path);
+    if (QSqlDatabase::contains("qt_sql_default_connection")) {
+        db = QSqlDatabase::database("qt_sql_default_connection");
+    } else {
+        db = QSqlDatabase::addDatabase("QSQLITE");
+        db.setDatabaseName(path);
+    }
     showFullScreen();
 }
 
