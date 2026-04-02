@@ -42,7 +42,6 @@ private slots:
     void Createfile();
     void SaveImage(QString image_path);
     void SaveText(QString answer);
-
 private:
     Ui::MainWindow *ui;
     QString full_file_name;

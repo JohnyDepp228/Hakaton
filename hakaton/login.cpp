@@ -6,7 +6,6 @@ login::login(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::login)
 {
-
     ui->setupUi(this);
     QString path = QCoreApplication::applicationDirPath() + "/Users.db";
     if (QSqlDatabase::contains("qt_sql_default_connection")) {
@@ -38,17 +37,17 @@ void login::on_enter_clicked()
 {
     QString login = ui->login_field->text();
     QString password = ui->password_field_2->text();
-    if(OpenDB(login,password)){
-        ui->login_field->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(103, 147, 0); padding-left: 17 px; text-align: left;");
-        ui->password_field_2->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(103, 147, 0); padding-left: 17 px; text-align: left;");
-        MainWindow *m = new MainWindow(login);
-        m->show();
-        hide();
-    }
-    else{
-        ui->login_field->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(170, 0, 0); padding-left: 17 px; text-align: left;");
-        ui->password_field_2->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(170, 0, 0); padding-left: 17 px; text-align: left;");
-    }
+        if(OpenDB(login,password)){
+            ui->login_field->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(103, 147, 0); padding-left: 17 px; text-align: left;");
+            ui->password_field_2->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(103, 147, 0); padding-left: 17 px; text-align: left;");
+            MainWindow *m = new MainWindow(login);
+            m->show();
+            hide();
+        }
+        else{
+            ui->login_field->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(170, 0, 0); padding-left: 17 px; text-align: left;");
+            ui->password_field_2->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(170, 0, 0); padding-left: 17 px; text-align: left;");
+        }
 }
 
 

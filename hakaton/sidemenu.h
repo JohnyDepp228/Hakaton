@@ -4,9 +4,9 @@
 #include <QWidget>
 #include <QFontDatabase>
 #include "minimenu.h"
-#include <QSqlDatabase>
-#include <QSql>
-#include <QSqlQuery>
+#include "historyicon.h"
+#include "message.h"
+#include <QVBoxLayout>
 
 namespace Ui {
 class sidemenu;
@@ -19,14 +19,16 @@ class sidemenu : public QWidget
 public:
     explicit sidemenu(QString str,QWidget *parent = nullptr);
     ~sidemenu();
+    void AddHistory();
 
 private slots:
     void on_union_2_clicked();
     void SetInterFont();
     void on_profile_info_clicked();
     void on_newchat_clicked();
-    void SetHistoryImg(QString email);
-    void SetHistoryText(QString email);
+    void ShowAllHistory();
+    void AddHistoryP(int place);
+
 signals:
     void UnionClicked();
     void ResetScreen();
@@ -35,7 +37,10 @@ private:
     Ui::sidemenu *ui;
     minimenu *min;
     QString email;
-    QSqlDatabase db;
+    QWidget *HistoryPlace;
+    QVBoxLayout *Vlay;
+    message *ms;
+    int histCount = 0;
 };
 
 #endif // SIDEMENU_H

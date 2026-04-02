@@ -30,6 +30,8 @@ MainWindow::MainWindow(QString str, QWidget *parent)
     connect(hm, &hidemenu::UnionClicked, this, &MainWindow::ShowSide);
     connect(hm, &hidemenu::ResetScreen, this, &MainWindow::Reset);
     connect(m, &message::mes, this, &MainWindow::ShowMsg);
+
+    connect(m, &message::mes, men, &sidemenu::AddHistory);
     Createfile();
 }
 
@@ -74,8 +76,8 @@ void MainWindow::ShowSide(){
 void MainWindow::ShowMsg(){
     SetMsgIcon(full_file_name);
     ui->mes->show();
-    SaveImage(full_file_name);
     ShowAnswer();
+    SaveImage(full_file_name);
 }
 
 void MainWindow::SetMsgIcon(QString path){
@@ -88,9 +90,9 @@ void MainWindow::ShowAnswer(){
     if(f.open(QIODevice::ReadOnly | QIODevice::Text)) {
     QTextStream in(&f);
     QString answer = in.readAll();
-    SaveText(answer);
     ui->answer->setText(answer);
     ui->answer->show();
+    SaveText(answer);
     }
     f.close();
 }
@@ -155,4 +157,5 @@ void MainWindow::SaveText(QString answer){
     }
     db.close();
 }
+
 

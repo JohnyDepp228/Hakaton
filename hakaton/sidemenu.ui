@@ -125,235 +125,11 @@ background-color: transparent;</string>
     <string>7 Days      </string>
    </property>
   </widget>
-  <widget class="QFrame" name="history1">
-   <property name="geometry">
-    <rect>
-     <x>15</x>
-     <y>233</y>
-     <width>321</width>
-     <height>163</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>321</width>
-     <height>163</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>321</width>
-     <height>162</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QFrame{
-    border: 2px solid rgb(94, 112, 53); 
-    color: rgb(59, 59, 59);
-    border-radius: 14px;
-	background-color: rgb(59, 59, 59);
-}
-QFrame:hover {
- border: 2px solid rgb(165, 236, 0); 
-    color: rgb(59, 59, 59);
-    border-radius: 14px;
-background-color: rgb(59, 59, 59);
-}</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::Shape::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Shadow::Raised</enum>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_8">
-    <item>
-     <widget class="QLabel" name="img">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>147</width>
-        <height>147</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>147</width>
-        <height>147</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: none</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/res/img/close-up-green-leaves-nature.jpg</pixmap>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <property name="spacing">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="text_3">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>144</width>
-          <height>72</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border:none;
-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QFrame" name="history1_2">
-   <property name="geometry">
-    <rect>
-     <x>15</x>
-     <y>408</y>
-     <width>321</width>
-     <height>163</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>321</width>
-     <height>163</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>321</width>
-     <height>162</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QFrame{
-    border: 2px solid rgb(94, 112, 53); 
-    color: rgb(59, 59, 59);
-    border-radius: 14px;
-	background-color: rgb(59, 59, 59);
-}
-QFrame:hover {
- border: 2px solid rgb(165, 236, 0); 
-    color: rgb(59, 59, 59);
-    border-radius: 14px;
-background-color: rgb(59, 59, 59);
-}</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::Shape::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Shadow::Raised</enum>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_9">
-    <item>
-     <widget class="QLabel" name="img_2">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>147</width>
-        <height>147</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>147</width>
-        <height>147</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: none</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/res/img/close-up-green-leaves-nature.jpg</pixmap>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="text_history2">
-      <item>
-       <widget class="QLabel" name="name_2">
-        <property name="styleSheet">
-         <string notr="true">border:none;
-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>Сахарная свекла</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="text_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>144</width>
-          <height>104</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border:none;
-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;Мучнистая роса свеклы.Гриб Erysiphe communis. На листьях и черешках появляется белый мучнистый налет...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
   <widget class="QFrame" name="dataset_frame">
    <property name="geometry">
     <rect>
      <x>15</x>
-     <y>583</y>
+     <y>585</y>
      <width>321</width>
      <height>53</height>
     </rect>
@@ -408,7 +184,7 @@ color:rgb(255, 255, 255)</string>
    <property name="geometry">
     <rect>
      <x>15</x>
-     <y>648</y>
+     <y>650</y>
      <width>321</width>
      <height>53</height>
     </rect>
@@ -723,12 +499,36 @@ background-color: rgba(255, 255, 255,0);
    <property name="frameShadow">
     <enum>QFrame::Shadow::Raised</enum>
    </property>
+   <widget class="QScrollArea" name="HistoryScroll">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>233</y>
+      <width>362</width>
+      <height>348</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>362</width>
+       <height>348</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <zorder>frame</zorder>
   <zorder>newchat</zorder>
   <zorder>days</zorder>
-  <zorder>history1</zorder>
-  <zorder>history1_2</zorder>
   <zorder>dataset_frame</zorder>
   <zorder>requets_frame</zorder>
   <zorder>user</zorder>

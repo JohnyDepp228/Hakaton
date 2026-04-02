@@ -33,6 +33,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         hidemenu.h hidemenu.cpp hidemenu.ui
         sidemenu.h sidemenu.cpp sidemenu.ui
         message.h message.cpp message.ui
+        historyicon.h historyicon.cpp historyicon.ui
 
     )
 # Define target properties for Android with Qt 6 as:
