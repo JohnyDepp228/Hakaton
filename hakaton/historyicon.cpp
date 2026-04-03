@@ -108,6 +108,5 @@ int HistoryIcon::HistoryCount(QString email){
         }
     }
     db.close();
-    std::cout << count << std::endl;
     return count;
 }

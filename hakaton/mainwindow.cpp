@@ -76,8 +76,8 @@ void MainWindow::ShowSide(){
 void MainWindow::ShowMsg(){
     SetMsgIcon(full_file_name);
     ui->mes->show();
-    ShowAnswer();
     SaveImage(full_file_name);
+    ShowAnswer();
 }
 
 void MainWindow::SetMsgIcon(QString path){
@@ -87,12 +87,17 @@ void MainWindow::SetMsgIcon(QString path){
 
 void MainWindow::ShowAnswer(){
     QFile f(full_path);
+    QString answer;
     if(f.open(QIODevice::ReadOnly | QIODevice::Text)) {
     QTextStream in(&f);
-    QString answer = in.readAll();
+    answer = in.readAll();
     ui->answer->setText(answer);
     ui->answer->show();
     SaveText(answer);
+    }
+    else{
+        answer = "Error";
+        SaveText(answer);
     }
     f.close();
 }
@@ -122,8 +127,8 @@ void MainWindow::Reset(){
     ui->load_folder->move(1132,515);
     if (!full_path.isEmpty()) {
         QFile file(full_path);
-        if (file.remove()) {
-            std::cout << "File deleted" << std::endl;
+        if (!file.remove()) {
+            std::cout << "Can't delete file" << std::endl;
         }
     }
     Createfile();
@@ -139,7 +144,7 @@ void MainWindow::SaveImage(QString image_path){
     pix.save(&buffer,"PNG");
     {
     QSqlQuery AddImag(db);
-    AddImag.prepare("INSERT INTO UsersHistory (login,image, answer) VALUES (:user,:img,:msg) ");
+    AddImag.prepare("INSERT INTO UsersHistory (login,image) VALUES (:user,:img) ");
     AddImag.bindValue(":user",user_name);
     AddImag.bindValue(":img",bytes);
     AddImag.exec();
@@ -151,8 +156,9 @@ void MainWindow::SaveText(QString answer){
     db.open();
     {
         QSqlQuery AddMsg(db);
-        AddMsg.prepare("UPDATE UsersHistory SET answer = :msg ");
+        AddMsg.prepare("UPDATE UsersHistory SET answer = :msg WHERE login = :img");
         AddMsg.bindValue(":msg",answer);
+        AddMsg.bindValue(":img",user_name);
         AddMsg.exec();
     }
     db.close();
