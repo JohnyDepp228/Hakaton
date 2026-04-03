@@ -42,6 +42,7 @@ private slots:
     void Createfile();
     void SaveImage(QString image_path);
     void SaveText(QString answer);
+    void History();
 private:
     Ui::MainWindow *ui;
     QString full_file_name;
@@ -52,5 +53,6 @@ private:
     QString full_path;
     QSqlDatabase db;
     QString user_name;
+    HistoryIcon *HistoryCout;
 };
 #endif // MAINWINDOW_H

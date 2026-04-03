@@ -19,7 +19,7 @@ sidemenu::sidemenu(QString str, QWidget *parent)
     Vlay = new QVBoxLayout(HistoryPlace);
     HistoryPlace->setLayout(Vlay);
     Vlay->setContentsMargins(0, 0, 0, 0);
-    Vlay->setSpacing(5);
+    Vlay->setSpacing(12);
     Vlay->setAlignment(Qt::AlignTop);
     ui->HistoryScroll->setWidget(HistoryPlace);
     ShowAllHistory();

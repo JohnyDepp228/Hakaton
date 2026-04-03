@@ -7,7 +7,7 @@ MainWindow::MainWindow(QString str, QWidget *parent)
 {
     user_name = str;
     ui->setupUi(this);
-    QString path = QCoreApplication::applicationDirPath() + "/UsersHistrory.db";
+    QString path = QCoreApplication::applicationDirPath() + "/UsersHistory.db";
     if (QSqlDatabase::contains("qt_sql_default_connection")) {
         db = QSqlDatabase::database("qt_sql_default_connection");
     } else {
@@ -32,6 +32,10 @@ MainWindow::MainWindow(QString str, QWidget *parent)
     connect(m, &message::mes, this, &MainWindow::ShowMsg);
 
     connect(m, &message::mes, men, &sidemenu::AddHistory);
+
+    HistoryCout = new HistoryIcon(this);
+   // HistoryCout->hide();
+    connect(HistoryCout,&HistoryIcon::ShowHistory,this,&MainWindow::History);
     Createfile();
 }
 
@@ -57,7 +61,6 @@ void MainWindow::on_load_media_clicked()
     m->move(792,953);
     m->show();
     ui->load_media->move(813,996);
-    ui->load_folder->move(1118,996);
     }
 }
 
@@ -71,6 +74,10 @@ void MainWindow::ShowSide(){
     hm->hide();
     men->move(0,0);
     men->show();
+}
+
+void MainWindow::History(){
+    qDebug() << "СИГНАЛ ПОЛУЧЕН!";
 }
 
 void MainWindow::ShowMsg(){
@@ -124,7 +131,6 @@ void MainWindow::Reset(){
     ui->answer->hide();
     ui->how_can_help->show();
     ui->load_media->move(801,515);
-    ui->load_folder->move(1132,515);
     if (!full_path.isEmpty()) {
         QFile file(full_path);
         if (!file.remove()) {

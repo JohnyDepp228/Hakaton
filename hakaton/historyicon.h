@@ -15,6 +15,7 @@ class HistoryIcon : public QWidget
     Q_OBJECT
 
 public:
+
     explicit HistoryIcon(QWidget *parent = nullptr);
     ~HistoryIcon();
 
@@ -24,11 +25,20 @@ public:
 
     void SetHistoryImg(QString email);
 
-     void SetHistoryText(QString email);
+    void SetHistoryText(QString email);
 
     int HistoryCount(QString email);
 
-private:
+ signals:
+
+    void ShowHistory();
+
+ private slots:
+
+     void on_History_clicked();
+
+ private:
+
     Ui::HistoryIcon *ui;
     QSqlDatabase db;
 };

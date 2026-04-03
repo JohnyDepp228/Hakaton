@@ -56,7 +56,7 @@
     color: rgb(255, 255, 255);
     background-color: rgb(85, 119, 0);
 }
-#newchat:pressed {
+#newchat:hover {
     border: 2px solid rgb(94, 112, 53);
     border-radius: 24px;
     color: rgb(255, 255, 255);
@@ -129,7 +129,7 @@ background-color: transparent;</string>
    <property name="geometry">
     <rect>
      <x>15</x>
-     <y>585</y>
+     <y>583</y>
      <width>321</width>
      <height>53</height>
     </rect>
@@ -184,7 +184,7 @@ color:rgb(255, 255, 255)</string>
    <property name="geometry">
     <rect>
      <x>15</x>
-     <y>650</y>
+     <y>648</y>
      <width>321</width>
      <height>53</height>
     </rect>
@@ -505,7 +505,7 @@ background-color: rgba(255, 255, 255,0);
       <x>15</x>
       <y>233</y>
       <width>362</width>
-      <height>348</height>
+      <height>345</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -520,7 +520,7 @@ background-color: rgba(255, 255, 255,0);
        <x>0</x>
        <y>0</y>
        <width>362</width>
-       <height>348</height>
+       <height>345</height>
       </rect>
      </property>
     </widget>

@@ -110,3 +110,10 @@ int HistoryIcon::HistoryCount(QString email){
     db.close();
     return count;
 }
+
+void HistoryIcon::on_History_clicked()
+{
+    std::cout << "Clicked" << std::endl;
+    emit ShowHistory();
+}
+
