@@ -28,7 +28,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QString str,QWidget *parent = nullptr);
+    MainWindow(QString str, QString name, QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -53,6 +53,7 @@ private:
     QString full_path;
     QSqlDatabase db;
     QString user_name;
+    QString user_email;
     HistoryIcon *HistoryCout;
 };
 #endif // MAINWINDOW_H

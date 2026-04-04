@@ -8,6 +8,7 @@ reg::reg(QWidget *parent)
     ui->setupUi(this);
     showFullScreen();
     CreateDB();
+    key = 13;
 }
 
 reg::~reg()
@@ -29,7 +30,7 @@ void reg::on_reg_buttom_clicked()
             if(!ui->code->text().isEmpty()){
                 if(ui->code->text() == code){
                 ui->code->setStyleSheet("color: rgb(255, 255, 255);border-radius: 24;border: 2px solid rgb(103, 147, 0); padding-left: 17 px; text-align: left;");
-                AddToDB(ui->login_field->text(),ui->password_field_2->text());
+                AddToDB(ui->login_field->text(),ui->password_field_2->text(),ui->name_field->text());
                 hide();
                 }
                 else{
@@ -76,7 +77,8 @@ void reg::CreateDB(){
         QSqlQuery query(db);
         QString str = "CREATE TABLE IF NOT EXISTS Users ("
                       "login TEXT NOT NULL, "
-                      "password TEXT NOT NULL);";
+                      "password TEXT NOT NULL,"
+                      "name TEXT NOT NULL);";
         query.exec(str);
 
         QString str1 = "CREATE TABLE IF NOT EXISTS UsersHistory ("
@@ -93,14 +95,18 @@ void reg::CreateDB(){
 }
 
 
-void reg::AddToDB(QString login,QString password){
+void reg::AddToDB(QString login,QString password,QString name){
+    QString tempLog = Encrypt(login,key);
+    QString tempPas = Encrypt(password,key);
+    QString tempName = Encrypt(name,key);
     db.open();
     db.transaction();
     {
     QSqlQuery AddData(db);
-    AddData.prepare("INSERT INTO Users(login, password) VALUES (:log,:pas)");
-    AddData.bindValue(":log",login);
-    AddData.bindValue(":pas",password);
+    AddData.prepare("INSERT INTO Users(login, password, name) VALUES (:log,:pas,:nam)");
+    AddData.bindValue(":log",tempLog);
+    AddData.bindValue(":pas",tempPas);
+    AddData.bindValue(":nam",tempName);
         if(AddData.exec()){
             db.commit();
         }
@@ -109,5 +115,29 @@ void reg::AddToDB(QString login,QString password){
         }
     }
     db.close();
+}
+
+QString reg::Encrypt(QString field,int key){
+    QByteArray bytes;
+    bytes = field.toUtf8();
+    for(auto &n: bytes){
+        n = n ^ key;
+    }
+
+    return QString::fromUtf8(bytes);
+}
+
+QString reg::Decrypt(QString field,int key){
+    QByteArray bytes;
+    bytes = field.toUtf8();
+    for(auto &n: bytes){
+        n = n ^ key;
+    }
+    return QString::fromUtf8(bytes);
+}
+
+void reg::on_pushButton_clicked()
+{
+    hide();
 }
 

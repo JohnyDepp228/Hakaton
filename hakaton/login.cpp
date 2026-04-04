@@ -15,6 +15,7 @@ login::login(QWidget *parent)
         db.setDatabaseName(path);
     }
     showFullScreen();
+    key = 13;
 }
 
 login::~login()
@@ -37,10 +38,15 @@ void login::on_enter_clicked()
 {
     QString login = ui->login_field->text();
     QString password = ui->password_field_2->text();
-        if(OpenDB(login,password)){
+    QString tempLog = Encrypt(login,key);
+    QString tempPas = Encrypt(password,key);
+    QString tempName;
+        if(OpenDB(tempLog,tempPas)){
+            GetName(tempLog,tempPas);
+            tempName = Encrypt(name,key);
             ui->login_field->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(103, 147, 0); padding-left: 17 px; text-align: left;");
             ui->password_field_2->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(103, 147, 0); padding-left: 17 px; text-align: left;");
-            MainWindow *m = new MainWindow(login);
+            MainWindow *m = new MainWindow(login,tempName);
             m->show();
             hide();
         }
@@ -68,4 +74,31 @@ bool login::OpenDB(QString login,QString password){
     }
     db.close();
     return access;
+}
+
+QString login::GetName(QString login,QString password){
+    db.open();
+    {
+        QSqlQuery show(db);
+        show.prepare("SELECT * FROM Users WHERE login = :val1 AND password = :val2");
+        show.bindValue(":val1",login);
+        show.bindValue(":val2",password);
+        if(show.exec() && show.next())
+        {
+            name = show.value("name").toString();
+        }
+    }
+    db.close();
+    return name;
+}
+
+
+QString login::Encrypt(QString field,int key){
+    QByteArray bytes;
+    bytes = field.toUtf8();
+    for(auto &n: bytes){
+        n = n ^ key;
+    }
+
+    return QString::fromUtf8(bytes);
 }

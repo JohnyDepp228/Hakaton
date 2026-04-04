@@ -14,7 +14,7 @@ class Menu : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Menu(QString str,QWidget *parent = nullptr);
+    explicit Menu(QString email, QString str, QWidget *parent = nullptr);
     ~Menu();
 
 

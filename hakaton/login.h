@@ -31,9 +31,14 @@ private slots:
 
     bool OpenDB(QString login,QString password);
 
+    QString Encrypt(QString field,int key);
+
+    QString GetName(QString login,QString password);
 private:
     Ui::login *ui;
     QSqlDatabase db;
+    QString name;
+    int key;
 };
 
 #endif // LOGIN_H

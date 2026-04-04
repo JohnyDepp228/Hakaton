@@ -1,11 +1,12 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-MainWindow::MainWindow(QString str, QWidget *parent)
+MainWindow::MainWindow(QString str,QString name, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    user_name = str;
+    user_name = name;
+    user_email = str;
     ui->setupUi(this);
     QString path = QCoreApplication::applicationDirPath() + "/UsersHistory.db";
     if (QSqlDatabase::contains("qt_sql_default_connection")) {
@@ -17,7 +18,7 @@ MainWindow::MainWindow(QString str, QWidget *parent)
     ui->mes->hide();
     ui->answer->hide();
     ui->answer->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    men = new sidemenu(str,this);
+    men = new sidemenu(user_email,user_name,this);
     hm = new hidemenu(this);
     hm->hide();
     men->move(0,0);

@@ -2,16 +2,17 @@
 #include "ui_sidemenu.h"
 
 
-sidemenu::sidemenu(QString str, QWidget *parent)
+sidemenu::sidemenu(QString str,QString name, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::sidemenu)
 {
     ui->setupUi(this);
     SetInterFont();
     email = str;
+    nameDB = name;
     setWindowFlags(Qt::Tool | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
-
+    ui->user_name->setText(name);
     ms = new message(this);
     ms->hide();
     ui->HistoryScroll->setWidgetResizable(true);
@@ -47,7 +48,7 @@ void sidemenu::SetInterFont()
 
 void sidemenu::on_profile_info_clicked()
 {
-    min = new minimenu(email,this);
+    min = new minimenu(email,nameDB,this);
     min->move(55,860);
     min->show();
 }

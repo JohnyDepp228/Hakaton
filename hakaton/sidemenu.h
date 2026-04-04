@@ -17,7 +17,7 @@ class sidemenu : public QWidget
     Q_OBJECT
 
 public:
-    explicit sidemenu(QString str,QWidget *parent = nullptr);
+    explicit sidemenu(QString str, QString name, QWidget *parent = nullptr);
     ~sidemenu();
     void AddHistory();
 
@@ -37,6 +37,7 @@ private:
     Ui::sidemenu *ui;
     minimenu *min;
     QString email;
+    QString nameDB;
     QWidget *HistoryPlace;
     QVBoxLayout *Vlay;
     message *ms;

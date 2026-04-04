@@ -45,7 +45,7 @@ background-color: rgb(30, 30, 30);</string>
      <rect>
       <x>804</x>
       <y>423</y>
-      <width>600</width>
+      <width>631</width>
       <height>62</height>
      </rect>
     </property>
@@ -57,7 +57,7 @@ background-color: rgb(30, 30, 30);</string>
     </property>
     <property name="maximumSize">
      <size>
-      <width>600</width>
+      <width>700</width>
       <height>62</height>
      </size>
     </property>
@@ -120,7 +120,7 @@ background-color: rgb(30, 30, 30);</string>
          <rect>
           <x>50</x>
           <y>0</y>
-          <width>551</width>
+          <width>561</width>
           <height>44</height>
          </rect>
         </property>

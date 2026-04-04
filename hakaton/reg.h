@@ -33,12 +33,19 @@ private slots:
 
     void CreateDB();
 
-    void AddToDB(QString login,QString password);
+    void AddToDB(QString login, QString password, QString name);
+
+    QString Encrypt(QString field, int key);
+
+    QString Decrypt(QString field, int key);
+
+    void on_pushButton_clicked();
 
 private:
     Ui::reg *ui;
     QString code;
     QSqlDatabase db;
+    int key;
 };
 
 #endif // REG_H

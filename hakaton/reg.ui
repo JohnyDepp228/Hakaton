@@ -64,76 +64,11 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>385</x>
-      <y>264</y>
-      <width>229</width>
-      <height>49</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>28</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border:none;
-color: rgb(103, 147, 0);</string>
-    </property>
-    <property name="text">
-     <string>PLANTGUARD</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>339</x>
-      <y>278</y>
-      <width>44</width>
-      <height>44</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>44</width>
-      <height>44</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>44</width>
-      <height>44</height>
-     </size>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LayoutDirection::RightToLeft</enum>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="resources.qrc">:/res/img/logo.jpg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="password_field_2">
     <property name="geometry">
      <rect>
-      <x>318</x>
-      <y>408</y>
+      <x>343</x>
+      <y>514</y>
       <width>325</width>
       <height>52</height>
      </rect>
@@ -163,9 +98,9 @@ padding-left: 17 px;
    <widget class="QLabel" name="policy">
     <property name="geometry">
      <rect>
-      <x>318</x>
-      <y>621</y>
-      <width>321</width>
+      <x>343</x>
+      <y>712</y>
+      <width>324</width>
       <height>51</height>
      </rect>
     </property>
@@ -179,32 +114,11 @@ padding-left: 17 px;
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>385</x>
-      <y>304</y>
-      <width>229</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(249, 250, 236);</string>
-    </property>
-    <property name="text">
-     <string>YOUR FIELD'S DIGITAL SHIELD</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="login_field">
     <property name="geometry">
      <rect>
-      <x>318</x>
-      <y>340</y>
+      <x>343</x>
+      <y>378</y>
       <width>325</width>
       <height>52</height>
      </rect>
@@ -234,8 +148,8 @@ padding-left: 17 px;
    <widget class="QPushButton" name="reg_buttom">
     <property name="geometry">
      <rect>
-      <x>318</x>
-      <y>700</y>
+      <x>343</x>
+      <y>777</y>
       <width>325</width>
       <height>44</height>
      </rect>
@@ -248,7 +162,7 @@ padding-left: 17 px;
     </property>
     <property name="font">
      <font>
-      <pointsize>16</pointsize>
+      <pointsize>12</pointsize>
       <bold>false</bold>
      </font>
     </property>
@@ -286,8 +200,8 @@ QPushButton:hover  {
    <widget class="QLineEdit" name="password_confirm">
     <property name="geometry">
      <rect>
-      <x>318</x>
-      <y>476</y>
+      <x>343</x>
+      <y>582</y>
       <width>325</width>
       <height>52</height>
      </rect>
@@ -320,8 +234,8 @@ padding-left: 17 px;
    <widget class="QLineEdit" name="code">
     <property name="geometry">
      <rect>
-      <x>318</x>
-      <y>544</y>
+      <x>343</x>
+      <y>650</y>
       <width>325</width>
       <height>52</height>
      </rect>
@@ -351,8 +265,8 @@ padding-left: 17 px;
    <widget class="QPushButton" name="send_code">
     <property name="geometry">
      <rect>
-      <x>539</x>
-      <y>550</y>
+      <x>557</x>
+      <y>657</y>
       <width>91</width>
       <height>37</height>
      </rect>
@@ -363,33 +277,178 @@ padding-left: 17 px;
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">border:none;
+     <string notr="true">#send_code{
+border:none;
 color: rgb(103, 147, 0);
+}
+
+#send_code:pressed{
+border:none;
+color: rgb(179, 179, 179);
+}
 </string>
     </property>
     <property name="text">
      <string>Отправить код</string>
     </property>
    </widget>
-   <widget class="QFrame" name="stic_on_code">
+   <widget class="QLineEdit" name="name_field">
     <property name="geometry">
      <rect>
-      <x>526</x>
-      <y>560</y>
-      <width>14</width>
-      <height>19</height>
+      <x>343</x>
+      <y>446</y>
+      <width>325</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+color: rgb(255, 255, 255);
+border-radius: 24;
+ border: 2px solid rgb(103, 147, 0);
+padding-left: 17 px; 
+    text-align: left; 
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Имя пользователя</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>344</x>
+      <y>833</y>
+      <width>325</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-border-color: rgb(255, 255, 255);</string>
+     <string notr="true">
+border:none;
+color: rgb(165, 236, 0);</string>
+    </property>
+    <property name="text">
+     <string>Войти</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="logo">
+    <property name="geometry">
+     <rect>
+      <x>375</x>
+      <y>298</y>
+      <width>255</width>
+      <height>55</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;</string>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Shape::VLine</enum>
+     <enum>QFrame::Shape::StyledPanel</enum>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>6</y>
+       <width>44</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>44</width>
+       <height>44</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>44</width>
+       <height>44</height>
+      </size>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::RightToLeft</enum>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resources.qrc">:/res/img/logo.jpg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>59</x>
+       <y>0</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+color: rgb(103, 147, 0);
+font-weight:bold;</string>
+     </property>
+     <property name="text">
+      <string>PLANTGUARD</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>59</x>
+       <y>30</y>
+       <width>191</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(249, 250, 236);
+font-weight:bold;</string>
+     </property>
+     <property name="text">
+      <string>YOUR FIELD'S DIGITAL SHIELD</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
