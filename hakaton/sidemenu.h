@@ -32,6 +32,7 @@ private slots:
 signals:
     void UnionClicked();
     void ResetScreen();
+    void HistorySide(const QPixmap &img,QString text);
 
 private:
     Ui::sidemenu *ui;

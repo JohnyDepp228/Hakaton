@@ -33,10 +33,8 @@ MainWindow::MainWindow(QString str,QString name, QWidget *parent)
     connect(m, &message::mes, this, &MainWindow::ShowMsg);
 
     connect(m, &message::mes, men, &sidemenu::AddHistory);
-
-    HistoryCout = new HistoryIcon(this);
-   // HistoryCout->hide();
-    connect(HistoryCout,&HistoryIcon::ShowHistory,this,&MainWindow::History);
+    bool con = connect(men,&sidemenu::HistorySide,this,&MainWindow::ShowTextAndImage);
+    qDebug() << "Connection status:" << con;
     Createfile();
 }
 
@@ -77,11 +75,16 @@ void MainWindow::ShowSide(){
     men->show();
 }
 
-void MainWindow::History(){
-    qDebug() << "СИГНАЛ ПОЛУЧЕН!";
+void MainWindow::ShowMsg(){
+    SetMsgIcon(full_file_name);
+    ui->mes->show();
+    SaveImage(full_file_name);
+    ShowAnswer();
 }
 
-void MainWindow::ShowMsg(){
+void MainWindow::ShowHistory(){
+    ui->how_can_help->hide();
+    ui->load_media->hide();
     SetMsgIcon(full_file_name);
     ui->mes->show();
     SaveImage(full_file_name);
@@ -132,6 +135,7 @@ void MainWindow::Reset(){
     ui->answer->hide();
     ui->how_can_help->show();
     ui->load_media->move(801,515);
+    ui->load_media->show();
     if (!full_path.isEmpty()) {
         QFile file(full_path);
         if (!file.remove()) {
@@ -169,6 +173,15 @@ void MainWindow::SaveText(QString answer){
         AddMsg.exec();
     }
     db.close();
+}
+
+void MainWindow::ShowTextAndImage(const QPixmap &img,QString answer){
+    ui->answer->setText(answer);
+    ui->mes->setPixmap(img);
+    ui->how_can_help->hide();
+    ui->load_media->hide();
+    ui->answer->show();
+    ui->mes->show();
 }
 
 

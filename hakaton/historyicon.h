@@ -31,7 +31,7 @@ public:
 
  signals:
 
-    void ShowHistory();
+    void ShowHistory(const QPixmap &img,QString text);
 
  private slots:
 

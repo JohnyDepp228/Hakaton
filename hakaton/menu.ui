@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>568</width>
-    <height>400</height>
+    <height>310</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -62,29 +62,11 @@ color: rgb(255, 255, 255);
      <string>Электронная почта</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>26</x>
-      <y>194</y>
-      <width>142</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: none;
-color: rgb(255, 255, 255);
-</string>
-    </property>
-    <property name="text">
-     <string>Номер телефона</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
       <x>26</x>
-      <y>254</y>
+      <y>194</y>
       <width>213</width>
       <height>21</height>
      </rect>
@@ -101,7 +83,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>27</x>
-      <y>314</y>
+      <y>254</y>
       <width>144</width>
       <height>21</height>
      </rect>
@@ -143,7 +125,7 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="icon">
      <iconset resource="resources.qrc">
-      <normaloff>:/res/img/plus.jpg</normaloff>:/res/img/plus.jpg</iconset>
+      <normaloff>:/svgimg/imgSvg/4115230-cancel-close-cross-delete_114048.svg</normaloff>:/svgimg/imgSvg/4115230-cancel-close-cross-delete_114048.svg</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -218,32 +200,11 @@ color: rgb(255, 255, 255);</string>
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;dan****ko@gmail.com&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>528</x>
-      <y>196</y>
-      <width>49</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>-</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="quit_acc">
     <property name="geometry">
      <rect>
       <x>455</x>
-      <y>247</y>
+      <y>194</y>
       <width>83</width>
       <height>25</height>
      </rect>
@@ -293,7 +254,7 @@ border-radius: 10;
     <property name="geometry">
      <rect>
       <x>455</x>
-      <y>307</y>
+      <y>254</y>
       <width>83</width>
       <height>25</height>
      </rect>

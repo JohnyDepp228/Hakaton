@@ -65,6 +65,8 @@ void sidemenu::AddHistory() {
     qDebug() << "Name sent" << email;
     hs->SetHistoryText(nameDB);
     hs->SetHistoryImg(nameDB);
+    bool con = connect(hs, &HistoryIcon::ShowHistory, this, &sidemenu::HistorySide);
+    qDebug() << "Conection status in sidemenu" << con;
     Vlay->addWidget(hs);
 }
 
@@ -72,6 +74,8 @@ void sidemenu::AddHistoryP(int place) {
     HistoryIcon *hs = new HistoryIcon;
     hs->SetHistoryText(nameDB,place);
     hs->SetHistoryImg(nameDB,place);
+    bool con = connect(hs, &HistoryIcon::ShowHistory, this, &sidemenu::HistorySide);
+    qDebug() << "Conection status in sidemenu" << con;
     Vlay->addWidget(hs);
 }
 
@@ -86,3 +90,4 @@ void sidemenu::ShowAllHistory() {
     }
     delete hs;
 }
+

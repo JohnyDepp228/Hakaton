@@ -26,7 +26,7 @@
    <string>PLANETGUARD</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset>
     <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
   </property>
   <property name="styleSheet">
@@ -58,7 +58,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resources.qrc">:/res/img/close-up-green-leaves-nature.jpg</pixmap>
+     <pixmap resource="resources.qrc">:/svgimg/imgSvg/close-up-green-leaves-nature.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -337,11 +337,18 @@ padding-left: 17 px;
 border:none;
 color: rgb(165, 236, 0);</string>
     </property>
-    <property name="text">
-     <string>Войти</string>
+    <property name="icon">
+     <iconset resource="resources.qrc">
+      <normaloff>:/svgimg/imgSvg/EnterFormReg.svg</normaloff>:/svgimg/imgSvg/EnterFormReg.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>325</width>
+      <height>16</height>
+     </size>
     </property>
    </widget>
-   <widget class="QFrame" name="logo">
+   <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
       <x>375</x>
@@ -350,105 +357,39 @@ color: rgb(165, 236, 0);</string>
       <height>55</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">border:none;</string>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
+    <property name="minimumSize">
+     <size>
+      <width>44</width>
+      <height>44</height>
+     </size>
     </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
+    <property name="maximumSize">
+     <size>
+      <width>255</width>
+      <height>55</height>
+     </size>
     </property>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>6</y>
-       <width>44</width>
-       <height>44</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>44</width>
-       <height>44</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>44</width>
-       <height>44</height>
-      </size>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LayoutDirection::RightToLeft</enum>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="resources.qrc">:/res/img/logo.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>59</x>
-       <y>0</y>
-       <width>191</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>20</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border:none;
-color: rgb(103, 147, 0);
-font-weight:bold;</string>
-     </property>
-     <property name="text">
-      <string>PLANTGUARD</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>59</x>
-       <y>30</y>
-       <width>191</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(249, 250, 236);
-font-weight:bold;</string>
-     </property>
-     <property name="text">
-      <string>YOUR FIELD'S DIGITAL SHIELD</string>
-     </property>
-    </widget>
+    <property name="layoutDirection">
+     <enum>Qt::LayoutDirection::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/svgimg/imgSvg/logo+ words.svg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
    </widget>
   </widget>
  </widget>

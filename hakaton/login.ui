@@ -20,7 +20,7 @@
    <string>PLANTGUARD</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset>
     <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
   </property>
   <property name="styleSheet">
@@ -61,7 +61,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resources.qrc">:/res/img/close-up-green-leaves-nature.jpg</pixmap>
+     <pixmap resource="resources.qrc">:/svgimg/imgSvg/close-up-green-leaves-nature.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -240,8 +240,8 @@ QPushButton:hover {
      <rect>
       <x>1309</x>
       <y>343</y>
-      <width>44</width>
-      <height>44</height>
+      <width>255</width>
+      <height>55</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -258,8 +258,8 @@ QPushButton:hover {
     </property>
     <property name="maximumSize">
      <size>
-      <width>44</width>
-      <height>44</height>
+      <width>255</width>
+      <height>55</height>
      </size>
     </property>
     <property name="layoutDirection">
@@ -272,57 +272,13 @@ QPushButton:hover {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resources.qrc">:/res/img/logo.jpg</pixmap>
+     <pixmap resource="resources.qrc">:/svgimg/imgSvg/logo+ words.svg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>1368</x>
-      <y>332</y>
-      <width>229</width>
-      <height>49</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>28</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border:none;
-color: rgb(103, 147, 0);</string>
-    </property>
-    <property name="text">
-     <string>PLANTGUARD</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>1368</x>
-      <y>373</y>
-      <width>229</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(249, 250, 236);
-border:none;</string>
-    </property>
-    <property name="text">
-     <string>YOUR FIELD'S DIGITAL SHIELD</string>
     </property>
    </widget>
   </widget>

@@ -53,7 +53,7 @@ background-color: rgb(45, 45, 45);</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="resources.qrc">:/res/img/logo.jpg</pixmap>
+    <pixmap resource="resources.qrc">:/svgimg/imgSvg/frame_gallery_image_images_photo_picture_pictures_icon_123209.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

@@ -119,6 +119,9 @@ int HistoryIcon::HistoryCount(QString login){
 void HistoryIcon::on_History_clicked()
 {
     std::cout << "Clicked" << std::endl;
-    emit ShowHistory();
+    QPixmap px = ui->img->grab();
+    qDebug() << ui->text_3->text();
+    qDebug() << px;
+    emit ShowHistory(px,ui->text_3->text());
 }
 

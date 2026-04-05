@@ -53,7 +53,13 @@
    </property>
    <property name="icon">
     <iconset resource="resources.qrc">
-     <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+     <normaloff>:/svgimg/imgSvg/settings.svg</normaloff>:/svgimg/imgSvg/settings.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>15</width>
+     <height>15</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="help">
@@ -93,7 +99,13 @@
    </property>
    <property name="icon">
     <iconset resource="resources.qrc">
-     <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+     <normaloff>:/svgimg/imgSvg/menu-arrow-circle.svg</normaloff>:/svgimg/imgSvg/menu-arrow-circle.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="close">
@@ -133,7 +145,13 @@
    </property>
    <property name="icon">
     <iconset resource="resources.qrc">
-     <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+     <normaloff>:/svgimg/imgSvg/log-out.svg</normaloff>:/svgimg/imgSvg/log-out.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
    </property>
   </widget>
   <widget class="QFrame" name="frame">

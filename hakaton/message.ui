@@ -47,10 +47,18 @@
     <property name="styleSheet">
      <string notr="true">border-radius: 20px;
 background-color: rgb(103, 147, 0);
-border-color: rgb(103, 147, 0);</string>
+border-color: rgb(103, 147, 0);
+image: url(:/svgimg/imgSvg/Arrow 1.svg); 
+image-position: center;</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>31</width>
+      <height>31</height>
+     </size>
     </property>
    </widget>
    <widget class="QFrame" name="iconplace">

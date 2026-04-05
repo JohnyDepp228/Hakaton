@@ -1,9 +1,4 @@
 <RCC>
-    <qresource prefix="/res">
-        <file>img/close-up-green-leaves-nature.jpg</file>
-        <file>img/plus.jpg</file>
-        <file>img/logo.jpg</file>
-    </qresource>
     <qresource prefix="/font">
         <file>fonts/Inter-Italic-VariableFont_opsz,wght.ttf</file>
         <file>fonts/Inter-VariableFont_opsz,wght.ttf</file>
@@ -11,4 +6,24 @@
     <qresource prefix="/send_code">
         <file>send_code.ps1</file>
     </qresource>
+    <qresource prefix="/svgimg">
+        <file>imgSvg/3643772-archive-archives-document-folder-open_113445.svg</file>
+        <file>imgSvg/3844473-hamburger-menu-more-navigation_110336.svg</file>
+        <file>imgSvg/add.svg</file>
+        <file>imgSvg/close-up-green-leaves-nature.jpg</file>
+        <file>imgSvg/icon-icons.svg</file>
+        <file>imgSvg/logo.svg</file>
+        <file>imgSvg/paperclip_83779.svg</file>
+        <file>imgSvg/Arrow 1.svg</file>
+        <file>imgSvg/user.svg</file>
+        <file>imgSvg/cross.svg</file>
+        <file>imgSvg/log-out.svg</file>
+        <file>imgSvg/settings.svg</file>
+        <file>imgSvg/menu-arrow-circle.svg</file>
+        <file>imgSvg/menu.svg</file>
+        <file>imgSvg/logo+ words.svg</file>
+        <file>imgSvg/download.svg</file>
+        <file>imgSvg/EnterFormReg.svg</file>
+    </qresource>
+    <qresource prefix="/svg"/>
 </RCC>

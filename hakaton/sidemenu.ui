@@ -46,7 +46,7 @@
    <property name="font">
     <font>
      <pointsize>16</pointsize>
-     <bold>false</bold>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -55,12 +55,14 @@
     border-radius: 24px;
     color: rgb(255, 255, 255);
     background-color: rgb(85, 119, 0);
+	font-weight:bold;
 }
 #newchat:hover {
     border: 2px solid rgb(94, 112, 53);
     border-radius: 24px;
     color: rgb(255, 255, 255);
     background-color: transparent;
+	font-weight:bold;
 }
 </string>
    </property>
@@ -69,7 +71,7 @@
    </property>
    <property name="icon">
     <iconset resource="resources.qrc">
-     <normaloff>:/res/img/plus.jpg</normaloff>:/res/img/plus.jpg</iconset>
+     <normaloff>:/svgimg/imgSvg/add.svg</normaloff>:/svgimg/imgSvg/add.svg</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -301,7 +303,7 @@ background-color: rgba(45, 45, 45,0);</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="resources.qrc">:/res/img/logo.jpg</pixmap>
+       <pixmap resource="resources.qrc">:/svgimg/imgSvg/user.svg</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -354,7 +356,7 @@ background-color: rgba(45, 45, 45,0);</string>
       </property>
       <property name="icon">
        <iconset resource="resources.qrc">
-        <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+        <normaloff>:/svgimg/imgSvg/icon-icons.svg</normaloff>:/svgimg/imgSvg/icon-icons.svg</iconset>
       </property>
      </widget>
     </item>
@@ -390,16 +392,22 @@ background-color: rgba(255, 255, 255,0);</string>
    </property>
    <property name="icon">
     <iconset resource="resources.qrc">
-     <normaloff>:/res/img/logo.jpg</normaloff>:/res/img/logo.jpg</iconset>
+     <normaloff>:/svgimg/imgSvg/menu.svg</normaloff>:/svgimg/imgSvg/menu.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>31</width>
+     <height>31</height>
+    </size>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
      <x>21</x>
-     <y>33</y>
-     <width>44</width>
-     <height>44</height>
+     <y>27</y>
+     <width>255</width>
+     <height>55</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -416,8 +424,8 @@ background-color: rgba(255, 255, 255,0);</string>
    </property>
    <property name="maximumSize">
     <size>
-     <width>44</width>
-     <height>44</height>
+     <width>255</width>
+     <height>55</height>
     </size>
    </property>
    <property name="layoutDirection">
@@ -430,54 +438,13 @@ background-color: rgba(255, 255, 255,0);</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="resources.qrc">:/res/img/logo.jpg</pixmap>
+    <pixmap resource="resources.qrc">:/svgimg/imgSvg/logo+ words.svg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>63</y>
-     <width>191</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(249, 250, 236);
-background-color: rgba(255, 255, 255,0);</string>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;YOUR FIELD'S DIGITAL SHIELD&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>31</y>
-     <width>151</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border:none;
-color: rgb(103, 147, 0);
-background-color: rgba(255, 255, 255,0);
-</string>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;PLANTGUARD&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QFrame" name="frame">
@@ -534,8 +501,6 @@ background-color: rgba(255, 255, 255,0);
   <zorder>user</zorder>
   <zorder>union_2</zorder>
   <zorder>label_3</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label</zorder>
  </widget>
  <resources>
   <include location="resources.qrc"/>
