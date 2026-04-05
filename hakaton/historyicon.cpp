@@ -1,6 +1,7 @@
 #include "historyicon.h"
 #include "ui_historyicon.h"
 #include <iostream>
+#include <QSqlError>
 
 HistoryIcon::HistoryIcon(QWidget *parent)
     : QWidget(parent)
@@ -22,13 +23,13 @@ HistoryIcon::~HistoryIcon()
 }
 
 
-void HistoryIcon::SetHistoryImg(QString email,int place){
+void HistoryIcon::SetHistoryImg(QString login,int place){
     db.open();
     QPixmap pix;
     {
         QSqlQuery SetImag(db);
         SetImag.prepare("SELECT image FROM UsersHistory WHERE login = :user LIMIT 1 OFFSET :offset");
-        SetImag.bindValue(":user",email);
+        SetImag.bindValue(":user",login);
         SetImag.bindValue(":offset",place);
         if(SetImag.exec() && SetImag.next()){
             QByteArray bytes = SetImag.value("image").toByteArray();
@@ -40,12 +41,12 @@ void HistoryIcon::SetHistoryImg(QString email,int place){
     db.close();
 }
 
-void HistoryIcon::SetHistoryText(QString email,int place){
+void HistoryIcon::SetHistoryText(QString login,int place){
     db.open();
     {
         QSqlQuery SetText(db);
         SetText.prepare("SELECT answer FROM UsersHistory WHERE login = :user LIMIT 1 OFFSET :offset");
-        SetText.bindValue(":user",email);
+        SetText.bindValue(":user",login);
         SetText.bindValue(":offset",place);
         if(SetText.exec() && SetText.next()){
                 QString answer= SetText.value("answer").toString();
@@ -59,13 +60,14 @@ void HistoryIcon::SetHistoryText(QString email,int place){
     db.close();
 }
 
-void HistoryIcon::SetHistoryImg(QString email){
+void HistoryIcon::SetHistoryImg(QString login){
     db.open();
     QPixmap pix;
     {
         QSqlQuery SetImag(db);
         SetImag.prepare("SELECT image FROM UsersHistory WHERE login = :user");
-        SetImag.bindValue(":user",email);
+        SetImag.bindValue(":user",login.trimmed());
+        qDebug() <<"Img login: " << login;
         if(SetImag.exec() && SetImag.next()){
             QByteArray bytes = SetImag.value("image").toByteArray();
             pix.loadFromData(bytes);
@@ -76,31 +78,34 @@ void HistoryIcon::SetHistoryImg(QString email){
     db.close();
 }
 
-void HistoryIcon::SetHistoryText(QString email){
+void HistoryIcon::SetHistoryText(QString login){
     db.open();
     {
         QSqlQuery SetText(db);
         SetText.prepare("SELECT answer FROM UsersHistory WHERE login = :user");
-        SetText.bindValue(":user",email);
+        SetText.bindValue(":user",login.trimmed());
+        qDebug() <<"Text login: " << login;
         if(SetText.exec() && SetText.next()){
             QString answer= SetText.value("answer").toString();
             ui->text_3->setText(answer);
         }
         else
         {
+            qDebug() << "SQL Error:" << SetText.lastError().text();
             ui->text_3->setText("No answer");
         }
     }
     db.close();
 }
 
-int HistoryIcon::HistoryCount(QString email){
+int HistoryIcon::HistoryCount(QString login){
     db.open();
     int count = 0;
     {
         QSqlQuery SetImag(db);
         SetImag.prepare("SELECT * FROM UsersHistory WHERE login = :user");
-        SetImag.bindValue(":user",email);
+        SetImag.bindValue(":user",login);
+
         if(SetImag.exec()){
             while(SetImag.next()){
                 count++;

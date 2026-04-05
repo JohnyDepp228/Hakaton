@@ -62,21 +62,22 @@ void sidemenu::on_newchat_clicked()
 
 void sidemenu::AddHistory() {
     HistoryIcon *hs = new HistoryIcon;
-    hs->SetHistoryText(email);
-    hs->SetHistoryImg(email);
+    qDebug() << "Name sent" << email;
+    hs->SetHistoryText(nameDB);
+    hs->SetHistoryImg(nameDB);
     Vlay->addWidget(hs);
 }
 
 void sidemenu::AddHistoryP(int place) {
     HistoryIcon *hs = new HistoryIcon;
-    hs->SetHistoryText(email,place);
-    hs->SetHistoryImg(email,place);
+    hs->SetHistoryText(nameDB,place);
+    hs->SetHistoryImg(nameDB,place);
     Vlay->addWidget(hs);
 }
 
 void sidemenu::ShowAllHistory() {
     HistoryIcon *hs = new HistoryIcon;
-    histCount = hs->HistoryCount(email);
+    histCount = hs->HistoryCount(nameDB);
     if(histCount > 0){
     for(int i = 0;i < histCount;++i)
         {

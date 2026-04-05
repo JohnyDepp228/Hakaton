@@ -19,15 +19,15 @@ public:
     explicit HistoryIcon(QWidget *parent = nullptr);
     ~HistoryIcon();
 
-    void SetHistoryImg(QString email,int place);
+    void SetHistoryImg(QString login,int place);
 
-    void SetHistoryText(QString email, int place);
+    void SetHistoryText(QString login, int place);
 
-    void SetHistoryImg(QString email);
+    void SetHistoryImg(QString login);
 
-    void SetHistoryText(QString email);
+    void SetHistoryText(QString login);
 
-    int HistoryCount(QString email);
+    int HistoryCount(QString login);
 
  signals:
 
