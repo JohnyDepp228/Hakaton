@@ -76,18 +76,10 @@ void MainWindow::ShowSide(){
 }
 
 void MainWindow::ShowMsg(){
-    SetMsgIcon(full_file_name);
-    ui->mes->show();
-    SaveImage(full_file_name);
-    ShowAnswer();
-}
-
-void MainWindow::ShowHistory(){
     ui->how_can_help->hide();
     ui->load_media->hide();
     SetMsgIcon(full_file_name);
     ui->mes->show();
-    SaveImage(full_file_name);
     ShowAnswer();
 }
 
@@ -97,20 +89,19 @@ void MainWindow::SetMsgIcon(QString path){
 }
 
 void MainWindow::ShowAnswer(){
-    QFile f(full_path);
-    QString answer;
-    if(f.open(QIODevice::ReadOnly | QIODevice::Text)) {
-    QTextStream in(&f);
-    answer = in.readAll();
-    ui->answer->setText(answer);
-    ui->answer->show();
-    SaveText(answer);
-    }
-    else{
-        answer = "Error";
-        SaveText(answer);
-    }
-    f.close();
+    QString LLM_path = qApp->applicationDirPath() + "/LLM/predict.py";
+    qDebug() << LLM_path;
+    request = new QProcess(this);
+    connect(request,&QProcess::finished,this,[this](){
+        QByteArray rawData = request->readAllStandardOutput();
+        answer = QString::fromLocal8Bit(rawData);
+        ui->answer->setText(answer);
+        ui->answer->show();
+        SaveImageAndText(full_file_name,answer);
+    });
+    request->setWorkingDirectory(qApp->applicationDirPath() + "/LLM");
+    request->start("py",QStringList() << LLM_path << full_file_name);
+
 }
 
 
@@ -159,6 +150,24 @@ void MainWindow::SaveImage(QString image_path){
     AddImag.bindValue(":user",user_name);
     AddImag.bindValue(":img",bytes);
     AddImag.exec();
+    }
+    db.close();
+}
+
+void MainWindow::SaveImageAndText(QString image_path,QString answer){
+    db.open();
+    QPixmap pix(image_path);
+    QByteArray bytes;
+    QBuffer buffer(&bytes);
+    buffer.open(QIODevice::WriteOnly);
+    pix.save(&buffer,"PNG");
+    {
+        QSqlQuery AddImag(db);
+        AddImag.prepare("INSERT INTO UsersHistory (login,image,answer) VALUES (:user,:img,:answer) ");
+        AddImag.bindValue(":user",user_name);
+        AddImag.bindValue(":img",bytes);
+        AddImag.bindValue(":answer",answer);
+        AddImag.exec();
     }
     db.close();
 }

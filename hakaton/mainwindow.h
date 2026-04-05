@@ -16,6 +16,7 @@
 #include "hidemenu.h"
 #include <windows.h>
 #include <iostream>
+#include <QProcess>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -42,7 +43,7 @@ private slots:
     void Createfile();
     void SaveImage(QString image_path);
     void SaveText(QString answer);
-    void ShowHistory();
+    void SaveImageAndText(QString image_path,QString answer);
     void ShowTextAndImage(const QPixmap &img,QString answer);
 private:
     Ui::MainWindow *ui;
@@ -56,5 +57,7 @@ private:
     QString user_name;
     QString user_email;
     HistoryIcon *HistoryCout;
+    QProcess *request;
+    QString answer;
 };
 #endif // MAINWINDOW_H

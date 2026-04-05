@@ -393,6 +393,16 @@ color: rgb(165, 236, 0);</string>
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>login_field</tabstop>
+  <tabstop>name_field</tabstop>
+  <tabstop>password_field_2</tabstop>
+  <tabstop>password_confirm</tabstop>
+  <tabstop>code</tabstop>
+  <tabstop>send_code</tabstop>
+  <tabstop>reg_buttom</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
  <resources>
   <include location="resources.qrc"/>
  </resources>
