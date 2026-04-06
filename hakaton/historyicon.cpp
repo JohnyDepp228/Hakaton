@@ -78,24 +78,11 @@ void HistoryIcon::SetHistoryImg(QString login){
     db.close();
 }
 
-void HistoryIcon::SetHistoryText(QString login){
-    db.open();
-    {
-        QSqlQuery SetText(db);
-        SetText.prepare("SELECT answer FROM UsersHistory WHERE login = :user");
-        SetText.bindValue(":user",login.trimmed());
-        qDebug() <<"Text login: " << login;
-        if(SetText.exec() && SetText.next()){
-            QString answer= SetText.value("answer").toString();
-            ui->text_3->setText(answer);
-        }
-        else
-        {
-            qDebug() << "SQL Error:" << SetText.lastError().text();
-            ui->text_3->setText("No answer");
-        }
-    }
-    db.close();
+void HistoryIcon::SetHistoryTextAndImg(QString img_path,QString answer){
+    QPixmap pix(img_path);
+    ui->text_3->setText(answer);
+    QPixmap scaledPix = pix.scaled(ui->img->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ui->img->setPixmap(scaledPix);
 }
 
 int HistoryIcon::HistoryCount(QString login){

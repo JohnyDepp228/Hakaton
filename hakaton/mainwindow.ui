@@ -183,10 +183,10 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton:hover {
-	color: rgb(30, 30, 30);
-    border: 2px solid  rgb(138, 138, 138);
+	color:rgb(255, 255, 255);
+    border: 2px solid  rgb(94, 112, 53);
     border-radius: 21px;
-	background-color: rgb(59, 59, 59);
+	background-color: rgb(30, 30, 30);
 	padding-left: 13px;
 	font-weight: bold; 
     text-align: center; 
@@ -200,6 +200,8 @@ QPushButton{
 	font-weight: bold;
     text-align: center; 
 }
+
+
 
 
 </string>

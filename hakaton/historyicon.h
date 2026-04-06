@@ -25,7 +25,7 @@ public:
 
     void SetHistoryImg(QString login);
 
-    void SetHistoryText(QString login);
+    void SetHistoryTextAndImg(QString img_path, QString login);
 
     int HistoryCount(QString login);
 

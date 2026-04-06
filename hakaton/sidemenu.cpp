@@ -24,6 +24,8 @@ sidemenu::sidemenu(QString str,QString name, QWidget *parent)
     Vlay->setAlignment(Qt::AlignTop);
     ui->HistoryScroll->setWidget(HistoryPlace);
     ShowAllHistory();
+
+    connect(parent,SIGNAL(CanAddHistory(QString,QString)),this,SLOT(AddHistory(QString,QString)));
 }
 
 sidemenu::~sidemenu()
@@ -60,11 +62,10 @@ void sidemenu::on_newchat_clicked()
 }
 
 
-void sidemenu::AddHistory() {
+void sidemenu::AddHistory(QString img_path,QString answer) {
     HistoryIcon *hs = new HistoryIcon;
     qDebug() << "Name sent" << email;
-    hs->SetHistoryText(nameDB);
-    hs->SetHistoryImg(nameDB);
+    hs->SetHistoryTextAndImg(img_path,answer);
     bool con = connect(hs, &HistoryIcon::ShowHistory, this, &sidemenu::HistorySide);
     qDebug() << "Conection status in sidemenu" << con;
     Vlay->addWidget(hs);

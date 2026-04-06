@@ -32,7 +32,6 @@ MainWindow::MainWindow(QString str,QString name, QWidget *parent)
     connect(hm, &hidemenu::ResetScreen, this, &MainWindow::Reset);
     connect(m, &message::mes, this, &MainWindow::ShowMsg);
 
-    connect(m, &message::mes, men, &sidemenu::AddHistory);
     bool con = connect(men,&sidemenu::HistorySide,this,&MainWindow::ShowTextAndImage);
     qDebug() << "Connection status:" << con;
     Createfile();
@@ -81,6 +80,8 @@ void MainWindow::ShowMsg(){
     SetMsgIcon(full_file_name);
     ui->mes->show();
     ShowAnswer();
+    ui->load_media->move(813,996);
+    ui->load_media->show();
 }
 
 void MainWindow::SetMsgIcon(QString path){
@@ -98,6 +99,7 @@ void MainWindow::ShowAnswer(){
         ui->answer->setText(answer);
         ui->answer->show();
         SaveImageAndText(full_file_name,answer);
+        emit CanAddHistory(full_file_name,answer);
     });
     request->setWorkingDirectory(qApp->applicationDirPath() + "/LLM");
     request->start("py",QStringList() << LLM_path << full_file_name);
@@ -191,6 +193,7 @@ void MainWindow::ShowTextAndImage(const QPixmap &img,QString answer){
     ui->load_media->hide();
     ui->answer->show();
     ui->mes->show();
+    ui->load_media->move(813,996);
 }
 
 

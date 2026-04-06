@@ -11,7 +11,7 @@
 namespace Ui {
 class sidemenu;
 }
-
+class MainWindow;
 class sidemenu : public QWidget
 {
     Q_OBJECT
@@ -19,7 +19,8 @@ class sidemenu : public QWidget
 public:
     explicit sidemenu(QString str, QString name, QWidget *parent = nullptr);
     ~sidemenu();
-    void AddHistory();
+public slots:
+    void AddHistory(QString img_path, QString answer);
 
 private slots:
     void on_union_2_clicked();

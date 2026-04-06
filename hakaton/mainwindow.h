@@ -45,6 +45,8 @@ private slots:
     void SaveText(QString answer);
     void SaveImageAndText(QString image_path,QString answer);
     void ShowTextAndImage(const QPixmap &img,QString answer);
+signals:
+    void CanAddHistory(QString img_path,QString answer);
 private:
     Ui::MainWindow *ui;
     QString full_file_name;
