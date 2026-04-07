@@ -36,6 +36,7 @@ void login::on_forgot_password_clicked()
 
 void login::on_enter_clicked()
 {
+    QSettings settings("PLANTGUARD","AIHELPER");
     QString login = ui->login_field->text();
     QString password = ui->password_field_2->text();
     QString tempLog = Encrypt(login,key);
@@ -47,12 +48,18 @@ void login::on_enter_clicked()
             ui->login_field->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(103, 147, 0); padding-left: 17 px; text-align: left;");
             ui->password_field_2->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(103, 147, 0); padding-left: 17 px; text-align: left;");
             MainWindow *m = new MainWindow(login,tempName);
+            settings.setValue("Login",login);
+            settings.setValue("Name",tempName);
+            settings.setValue("Reg",true);
             m->show();
             hide();
         }
         else{
             ui->login_field->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(170, 0, 0); padding-left: 17 px; text-align: left;");
             ui->password_field_2->setStyleSheet("color: rgb(255, 255, 255); border-radius: 24; border: 2px solid rgb(170, 0, 0); padding-left: 17 px; text-align: left;");
+            settings.setValue("Reg",false);
+            settings.setValue("Login","NULL");
+            settings.setValue("Name","NULL");
         }
 }
 

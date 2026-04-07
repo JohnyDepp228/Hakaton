@@ -11,6 +11,7 @@
 #include <QDir>
 #include <iostream>
 #include <QMessageBox>
+#include <random>
 
 namespace Ui {
 class reg;
@@ -40,6 +41,8 @@ private slots:
     QString Decrypt(QString field, int key);
 
     void on_pushButton_clicked();
+
+    QString CreateCode();
 
 private:
     Ui::reg *ui;

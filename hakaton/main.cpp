@@ -8,24 +8,23 @@
 #include "sidemenu.h"
 #include <QApplication>
 
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    login l;
-    l.show();
-    // FileIcon f;
-    // f.show();
-    // hidemenu h;
-    // h.show();
-    // Menu m;
-    // m.show();
-    // minimenu mm;
-    // mm.show();
-    // reg r;   //цвет не задний не тот
-    // r.show();
-    // sidemenu s;
-    // s.show();
-    // MainWindow w;
-    // w.show();
+    QSettings settings("PLANTGUARD","AIHELPER");
+    bool reg = false;
+    reg = settings.value("Reg").toBool();
+    QWidget *window = nullptr;
+    if(!reg){
+        window = new login;
+        window->show();
+    }
+    else   {
+        QString user_login = settings.value("Login").toString();
+        QString user_name = settings.value("Name").toString();
+        window = new MainWindow(user_login,user_name);
+        window->show();
+    }
     return a.exec();
 }

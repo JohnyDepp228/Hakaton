@@ -55,7 +55,8 @@ void reg::on_send_code_clicked()
     if (QFile::exists(tempPath)) QFile::remove(tempPath);
     QFile::copy(resPath, tempPath);
     QString email = ui->login_field->text();
-    code = "123456";
+    code = CreateCode();
+    qDebug() << "Code" << code;
     QStringList arg;
     arg << "-ExecutionPolicy" << "Bypass"
         << "-File" << tempPath
@@ -141,3 +142,16 @@ void reg::on_pushButton_clicked()
     hide();
 }
 
+QString reg::CreateCode(){
+    QString code;
+    for(int i = 0;i < 6;i ++)
+    {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(0, 10 - 1);
+    char ch =  dis(gen) + '0';
+    code += ch;
+    }
+
+    return code;
+}

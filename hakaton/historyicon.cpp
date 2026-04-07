@@ -50,37 +50,20 @@ void HistoryIcon::SetHistoryText(QString login,int place){
         SetText.bindValue(":offset",place);
         if(SetText.exec() && SetText.next()){
                 QString answer= SetText.value("answer").toString();
-                ui->text_3->setText(answer);
+                ui->text->setText(answer);
         }
         else
         {
-            ui->text_3->setText("No answer");
+            ui->text->setText("No answer");
         }
     }
     db.close();
 }
 
-void HistoryIcon::SetHistoryImg(QString login){
-    db.open();
-    QPixmap pix;
-    {
-        QSqlQuery SetImag(db);
-        SetImag.prepare("SELECT image FROM UsersHistory WHERE login = :user");
-        SetImag.bindValue(":user",login.trimmed());
-        qDebug() <<"Img login: " << login;
-        if(SetImag.exec() && SetImag.next()){
-            QByteArray bytes = SetImag.value("image").toByteArray();
-            pix.loadFromData(bytes);
-            QPixmap scaledPix = pix.scaled(ui->img->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
-            ui->img->setPixmap(scaledPix);
-        }
-    }
-    db.close();
-}
 
 void HistoryIcon::SetHistoryTextAndImg(QString img_path,QString answer){
     QPixmap pix(img_path);
-    ui->text_3->setText(answer);
+    ui->text->setText(answer);
     QPixmap scaledPix = pix.scaled(ui->img->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ui->img->setPixmap(scaledPix);
 }
@@ -107,8 +90,8 @@ void HistoryIcon::on_History_clicked()
 {
     std::cout << "Clicked" << std::endl;
     QPixmap px = ui->img->grab();
-    qDebug() << ui->text_3->text();
+    qDebug() << ui->text->text();
     qDebug() << px;
-    emit ShowHistory(px,ui->text_3->text());
+    emit ShowHistory(px,ui->text->text());
 }
 

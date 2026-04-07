@@ -24,6 +24,10 @@ private slots:
 
     void on_quit_acc_clicked();
 
+    void on_quit_acc_2_clicked();
+
+    QString Encrypt(QString field,int key);
+
 private:
     Ui::Menu *ui;
     QString email;

@@ -8,6 +8,7 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include <iostream>
+#include <QSettings>
 #include "reg.h"
 #include "mainwindow.h"
 

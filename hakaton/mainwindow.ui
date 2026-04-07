@@ -232,6 +232,9 @@ QPushButton{
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QLabel" name="answer">
     <property name="geometry">

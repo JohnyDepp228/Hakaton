@@ -83,160 +83,6 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="days">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>28</x>
-     <y>196</y>
-     <width>53</width>
-     <height>19</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>53</width>
-     <height>19</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>53</width>
-     <height>19</height>
-    </size>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color:rgb(162, 161, 166);
-background-color: rgb(45, 45, 45);
-background-color: transparent;</string>
-   </property>
-   <property name="text">
-    <string>7 Days      </string>
-   </property>
-  </widget>
-  <widget class="QFrame" name="dataset_frame">
-   <property name="geometry">
-    <rect>
-     <x>15</x>
-     <y>583</y>
-     <width>321</width>
-     <height>53</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>321</width>
-     <height>53</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>321</width>
-     <height>53</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QFrame{
-    border: 2px solid rgb(94, 112, 53); 
-    color: rgb(59, 59, 59);
-    border-radius: 14px;
-	background-color: rgb(59, 59, 59);
-}
-QFrame:hover {
- border: 2px solid rgb(165, 236, 0); 
-    color: rgb(59, 59, 59);
-    border-radius: 14px;
-background-color: rgb(59, 59, 59);
-}</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::Shape::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Shadow::Raised</enum>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_12">
-    <item>
-     <widget class="QLabel" name="dataset_2">
-      <property name="styleSheet">
-       <string notr="true">border: none;
-color:rgb(255, 255, 255)</string>
-      </property>
-      <property name="text">
-       <string>Загружен датасет: C:ff</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QFrame" name="requets_frame">
-   <property name="geometry">
-    <rect>
-     <x>15</x>
-     <y>648</y>
-     <width>321</width>
-     <height>53</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>321</width>
-     <height>53</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>321</width>
-     <height>53</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QFrame{
-    border: 2px solid rgb(94, 112, 53); 
-    color: rgb(59, 59, 59);
-    border-radius: 14px;
-	background-color: rgb(59, 59, 59);
-}
-QFrame:hover {
- border: 2px solid rgb(165, 236, 0); 
-    color: rgb(59, 59, 59);
-    border-radius: 14px;
-background-color: rgb(59, 59, 59);
-}</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::Shape::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Shadow::Raised</enum>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_11">
-    <item>
-     <widget class="QLabel" name="requets">
-      <property name="styleSheet">
-       <string notr="true">border: none;
-color:rgb(255, 255, 255)</string>
-      </property>
-      <property name="text">
-       <string>Текстовый запрос: Тимофеевка</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QFrame" name="user">
    <property name="geometry">
     <rect>
@@ -338,8 +184,8 @@ background-color: rgba(45, 45, 45,0);</string>
      <widget class="QPushButton" name="profile_info">
       <property name="maximumSize">
        <size>
-        <width>30</width>
-        <height>30</height>
+        <width>16</width>
+        <height>7</height>
        </size>
       </property>
       <property name="font">
@@ -348,8 +194,14 @@ background-color: rgba(45, 45, 45,0);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:none;
-background-color: rgba(45, 45, 45,0);</string>
+       <string notr="true">#profile_info:hover {
+background-color: rgb(45, 45, 45);
+border:none;
+}
+#profile_info{
+border:none;
+background-color: rgba(45, 45, 45,0);
+}</string>
       </property>
       <property name="text">
        <string/>
@@ -472,7 +324,7 @@ background-color: rgba(255, 255, 255,0);</string>
       <x>15</x>
       <y>233</y>
       <width>362</width>
-      <height>345</height>
+      <height>511</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -487,7 +339,7 @@ background-color: rgba(255, 255, 255,0);</string>
        <x>0</x>
        <y>0</y>
        <width>362</width>
-       <height>345</height>
+       <height>511</height>
       </rect>
      </property>
     </widget>
@@ -495,9 +347,6 @@ background-color: rgba(255, 255, 255,0);</string>
   </widget>
   <zorder>frame</zorder>
   <zorder>newchat</zorder>
-  <zorder>days</zorder>
-  <zorder>dataset_frame</zorder>
-  <zorder>requets_frame</zorder>
   <zorder>user</zorder>
   <zorder>union_2</zorder>
   <zorder>label_3</zorder>

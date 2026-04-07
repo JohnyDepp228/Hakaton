@@ -125,7 +125,7 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="icon">
      <iconset resource="resources.qrc">
-      <normaloff>:/svgimg/imgSvg/4115230-cancel-close-cross-delete_114048.svg</normaloff>:/svgimg/imgSvg/4115230-cancel-close-cross-delete_114048.svg</iconset>
+      <normaloff>:/svgimg/imgSvg/cross.svg</normaloff>:/svgimg/imgSvg/cross.svg</iconset>
     </property>
     <property name="iconSize">
      <size>
