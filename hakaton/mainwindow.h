@@ -40,7 +40,6 @@ private slots:
     void SetMsgIcon(QString path);
     void ShowAnswer();
     void Reset();
-    void Createfile();
     void SaveImage(QString image_path);
     void SaveText(QString answer);
     void SaveImageAndText(QString image_path,QString answer);
@@ -48,6 +47,7 @@ private slots:
 
     void ShowSideMenuAnimation(QWidget *min);
     void HideSideMenuAnimation(QWidget *min);
+    void ShowImgAnimation(QLabel *img, int finish_x, int finish_y, int start_x, int start_y);
 signals:
     void CanAddHistory(QString img_path,QString answer);
 private:

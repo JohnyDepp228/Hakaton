@@ -34,7 +34,6 @@ MainWindow::MainWindow(QString str,QString name, QWidget *parent)
 
     bool con = connect(men,&sidemenu::HistorySide,this,&MainWindow::ShowTextAndImage);
     qDebug() << "Connection status:" << con;
-    Createfile();
 }
 
 MainWindow::~MainWindow()
@@ -95,11 +94,23 @@ void MainWindow::ShowSideMenuAnimation(QWidget *min){
     animation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
+void MainWindow::ShowImgAnimation(QLabel *img, int finish_x, int finish_y, int start_x, int start_y){
+    img->show();
+    int height = img->height();
+    int width = img->width();
+    QPropertyAnimation *animation = new QPropertyAnimation(img,"geometry");
+    animation->setDuration(500);
+    animation->setStartValue(QRect(start_x,start_y,1,1));
+    animation->setEasingCurve(QEasingCurve::OutQuad);
+    animation->setEndValue(QRect(finish_x,finish_y,height,width));
+    animation->start(QAbstractAnimation::DeleteWhenStopped);
+}
+
 void MainWindow::ShowMsg(){
     ui->how_can_help->hide();
     ui->load_media->hide();
     SetMsgIcon(full_file_name);
-    ui->mes->show();
+    ShowImgAnimation(ui->mes,1258,170,1444,996);
     ShowAnswer();
     ui->load_media->move(813,996);
     ui->load_media->show();
@@ -118,29 +129,14 @@ void MainWindow::ShowAnswer(){
         QByteArray rawData = request->readAllStandardOutput();
         answer = QString::fromLocal8Bit(rawData);
         ui->answer->setText(answer);
-        ui->answer->show();
+        //ui->answer->show();
+        ShowImgAnimation(ui->answer,640,404,813,996);
         SaveImageAndText(full_file_name,answer);
         emit CanAddHistory(full_file_name,answer);
     });
     request->setWorkingDirectory(qApp->applicationDirPath() + "/LLM");
     request->start("py",QStringList() << LLM_path << full_file_name);
 
-}
-
-
-void MainWindow::Createfile(){
-    QString appPath = QCoreApplication::applicationDirPath();
-    QString dirPath = appPath + "/Answer";
-    QDir dir;
-    if (!dir.exists(dirPath)) {
-        dir.mkpath(dirPath);
-    }
-    full_path = dirPath + "/answer.txt";
-    QFile f(full_path);
-    if(f.open(QIODevice::WriteOnly  | QIODevice::Text)){
-    f.write("Не чет не хочу");
-    f.close();
-    }
 }
 
 void MainWindow::Reset(){
@@ -150,13 +146,6 @@ void MainWindow::Reset(){
     ui->how_can_help->show();
     ui->load_media->move(801,515);
     ui->load_media->show();
-    if (!full_path.isEmpty()) {
-        QFile file(full_path);
-        if (!file.remove()) {
-            std::cout << "Can't delete file" << std::endl;
-        }
-    }
-    Createfile();
 }
 
 
