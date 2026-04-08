@@ -94,7 +94,7 @@ void MainWindow::ShowSideMenuAnimation(QWidget *min){
     animation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
-void MainWindow::ShowImgAnimation(QLabel *img, int finish_x, int finish_y, int start_x, int start_y){
+void MainWindow::ShowMsgAnimation(QLabel *img, int finish_x, int finish_y, int start_x, int start_y){
     img->show();
     int height = img->height();
     int width = img->width();
@@ -110,7 +110,7 @@ void MainWindow::ShowMsg(){
     ui->how_can_help->hide();
     ui->load_media->hide();
     SetMsgIcon(full_file_name);
-    ShowImgAnimation(ui->mes,1258,170,1444,996);
+    ShowMsgAnimation(ui->mes,1258,170,1444,996);
     ShowAnswer();
     ui->load_media->move(813,996);
     ui->load_media->show();
@@ -129,8 +129,7 @@ void MainWindow::ShowAnswer(){
         QByteArray rawData = request->readAllStandardOutput();
         answer = QString::fromLocal8Bit(rawData);
         ui->answer->setText(answer);
-        //ui->answer->show();
-        ShowImgAnimation(ui->answer,640,404,813,996);
+        ShowMsgAnimation(ui->answer,640,404,1000,996);
         SaveImageAndText(full_file_name,answer);
         emit CanAddHistory(full_file_name,answer);
     });
