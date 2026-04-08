@@ -9,6 +9,7 @@
 #include <QDir>
 #include "menu.h"
 #include <iostream>
+#include <QPropertyAnimation>
 
 namespace Ui {
 class minimenu;
@@ -24,6 +25,7 @@ public:
 private slots:
     void on_settings_clicked();
     void on_close_clicked();
+    void ShowMenuAnimation(QWidget *min, int finish_x, int finish_y);
 
 protected:
     void paintEvent(QPaintEvent *event) override;

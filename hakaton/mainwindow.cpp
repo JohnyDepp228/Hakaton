@@ -63,15 +63,36 @@ void MainWindow::on_load_media_clicked()
 }
 
 void MainWindow::HideSide(){
-    men->hide();
-    hm->move(0,0);
-    hm->show();
+    HideSideMenuAnimation(men);
+    ShowSideMenuAnimation(hm);
 }
 
 void MainWindow::ShowSide(){
-    hm->hide();
-    men->move(0,0);
-    men->show();
+    HideSideMenuAnimation(hm);
+    ShowSideMenuAnimation(men);
+}
+
+void MainWindow::HideSideMenuAnimation(QWidget *min){
+    int finish_x = 0 - min->width();
+    QPropertyAnimation *animation = new QPropertyAnimation(min,"geometry");
+    animation->setDuration(500);
+    animation->setStartValue(QRect(0,0,1,1));
+    animation->setEasingCurve(QEasingCurve::OutQuad);
+    animation->setEndValue(QRect(finish_x,0,391,1080));
+    connect(animation,&QPropertyAnimation::finished,min,QWidget::hide);
+    animation->start(QAbstractAnimation::DeleteWhenStopped);
+}
+
+void MainWindow::ShowSideMenuAnimation(QWidget *min){
+    int start_x = 0 - min->width();
+    int start_y = 0;
+    QPropertyAnimation *animation = new QPropertyAnimation(min,"geometry");
+    animation->setDuration(500);
+    animation->setStartValue(QRect(start_x,start_y,1,1));
+    animation->setEasingCurve(QEasingCurve::OutQuad);
+    animation->setEndValue(QRect(0,0,391,1080));
+    min->show();
+    animation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
 void MainWindow::ShowMsg(){

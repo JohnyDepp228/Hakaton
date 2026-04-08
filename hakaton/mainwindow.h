@@ -45,6 +45,9 @@ private slots:
     void SaveText(QString answer);
     void SaveImageAndText(QString image_path,QString answer);
     void ShowTextAndImage(const QPixmap &img,QString answer);
+
+    void ShowSideMenuAnimation(QWidget *min);
+    void HideSideMenuAnimation(QWidget *min);
 signals:
     void CanAddHistory(QString img_path,QString answer);
 private:

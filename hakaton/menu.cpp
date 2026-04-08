@@ -35,9 +35,6 @@ void Menu::on_quit_acc_clicked()
 }
 
 
-
-
-
 void Menu::on_quit_acc_2_clicked()
 {
     QSettings settings("PLANTGUARD","AIHELPER");

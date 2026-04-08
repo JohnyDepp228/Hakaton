@@ -16,9 +16,14 @@
   <property name="styleSheet">
    <string notr="true">border: 1px solid rgb(45, 45, 45);
 background-color: rgb(45, 45, 45);
-border-radius: 24;</string>
+border-radius: 12;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid rgb(45, 45, 45);
+background-color: rgb(45, 45, 45);
+border-radius: 12;</string>
+   </property>
    <widget class="QLabel" name="profile">
     <property name="geometry">
      <rect>

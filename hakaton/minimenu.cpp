@@ -28,8 +28,17 @@ void minimenu::paintEvent(QPaintEvent *event)
 void minimenu::on_settings_clicked()
 {
     m = new Menu(email,name,this);
-    m->move(804,300);
-    m->show();
+    ShowMenuAnimation(m,804,300);
+}
+
+void minimenu::ShowMenuAnimation(QWidget *min,int finish_x,int finish_y){
+    QPropertyAnimation *animation = new QPropertyAnimation(min,"geometry");
+    animation->setDuration(1000);
+    animation->setStartValue(QRect(85,850,1,1));
+    animation->setEasingCurve(QEasingCurve::OutQuad);
+    animation->setEndValue(QRect(finish_x,finish_y,568,310));
+    min->show();
+    animation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
 void minimenu::on_close_clicked()

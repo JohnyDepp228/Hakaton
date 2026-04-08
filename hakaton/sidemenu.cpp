@@ -51,11 +51,20 @@ void sidemenu::SetInterFont()
 void sidemenu::on_profile_info_clicked()
 {
     min = new minimenu(email,nameDB,this);
-    min->move(55,860);
-    min->show();
+    ShowMenuAnimation(min,55,860);
 }
 
-
+void sidemenu::ShowMenuAnimation(QWidget *min,int finish_x,int finish_y){
+    int start_x = 55;
+    int start_y = 902;
+    QPropertyAnimation *animation = new QPropertyAnimation(min,"geometry");
+    animation->setDuration(500);
+    animation->setStartValue(QRect(start_x,start_y,1,1));
+    animation->setEasingCurve(QEasingCurve::OutQuad);
+    animation->setEndValue(QRect(finish_x,finish_y,282,114));
+    min->show();
+    animation->start(QAbstractAnimation::DeleteWhenStopped);
+}
 void sidemenu::on_newchat_clicked()
 {
     emit ResetScreen();

@@ -39,4 +39,3 @@ void message::on_send_msg_clicked()
     clearLayout(lay);
     emit mes();
 }
-

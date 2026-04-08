@@ -7,6 +7,7 @@
 #include "historyicon.h"
 #include "message.h"
 #include <QVBoxLayout>
+#include <QPropertyAnimation>
 
 namespace Ui {
 class sidemenu;
@@ -29,6 +30,7 @@ private slots:
     void on_newchat_clicked();
     void ShowAllHistory();
     void AddHistoryP(int place);
+    void ShowMenuAnimation(QWidget *min, int finish_x, int finish_y);
 
 signals:
     void UnionClicked();

@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QGridLayout>
 #include "fileicon.h"
+#include <QPropertyAnimation>
 
 namespace Ui {
 class message;
