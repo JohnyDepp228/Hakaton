@@ -26,7 +26,9 @@ private slots:
     void on_settings_clicked();
     void on_close_clicked();
     void ShowMenuAnimation(QWidget *min, int finish_x, int finish_y);
-
+    void SignalToClose();
+signals:
+    void CloseMain();
 protected:
     void paintEvent(QPaintEvent *event) override;
 private:

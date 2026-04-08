@@ -12,22 +12,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    // QSettings settings("PLANTGUARD","AIHELPER");
-    // bool reg = false;
-    // reg = settings.value("Reg").toBool();
-    // QWidget *window = nullptr;
-    // if(!reg){
-    //     window = new login;
-    //     window->show();
-    // }
-    // else   {
-    //     QString user_login = settings.value("Login").toString();
-    //     QString user_name = settings.value("Name").toString();
-    //     qDebug() << "Sent to main " << user_login << user_name;
-    //     window = new MainWindow(user_login,user_name);
-    //     window->show();
-    // }
-    logn l;
+    login l;
     l.show();
     return a.exec();
 }

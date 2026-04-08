@@ -24,8 +24,11 @@ sidemenu::sidemenu(QString str,QString name, QWidget *parent)
     Vlay->setAlignment(Qt::AlignTop);
     ui->HistoryScroll->setWidget(HistoryPlace);
     ShowAllHistory();
-
     connect(parent,SIGNAL(CanAddHistory(QString,QString)),this,SLOT(AddHistory(QString,QString)));
+
+
+    min = new minimenu(str,name,this);
+    connect(min,&minimenu::CloseMain,this,&sidemenu::SignalToClose);
 }
 
 sidemenu::~sidemenu()
@@ -50,7 +53,6 @@ void sidemenu::SetInterFont()
 
 void sidemenu::on_profile_info_clicked()
 {
-    min = new minimenu(email,nameDB,this);
     ShowMenuAnimation(min,55,860);
 }
 
@@ -70,24 +72,21 @@ void sidemenu::on_newchat_clicked()
     emit ResetScreen();
 }
 
-
+void sidemenu::SignalToClose(){
+    emit CloseMain();
+}
 void sidemenu::AddHistory(QString img_path,QString answer) {
     HistoryIcon *hs = new HistoryIcon;
-    qDebug() << "Name sent" << email;
     hs->SetHistoryTextAndImg(img_path,answer);
-    bool con = connect(hs, &HistoryIcon::ShowHistory, this, &sidemenu::HistorySide);
-    qDebug() << "Conection status in sidemenu" << con;
+   connect(hs, &HistoryIcon::ShowHistory, this, &sidemenu::HistorySide);
     Vlay->addWidget(hs);
-    qDebug() << "Get history successfully in sidemenu";
 }
 
 void sidemenu::AddHistoryP(int place) {
     HistoryIcon *hs = new HistoryIcon;
     hs->SetHistoryText(nameDB,place);
     hs->SetHistoryImg(nameDB,place);
-    qDebug() << "Setting history of nameDB" << nameDB;
-    bool con = connect(hs, &HistoryIcon::ShowHistory, this, &sidemenu::HistorySide);
-    qDebug() << "Conection status in sidemenu" << con;
+    connect(hs, &HistoryIcon::ShowHistory, this, &sidemenu::HistorySide);
     Vlay->addWidget(hs);
 }
 
@@ -100,8 +99,6 @@ void sidemenu::ShowAllHistory() {
             AddHistoryP(i);
         }
     }
-    qDebug() << "Set all history successfully in sidemenu";
-
     delete hs;
 }
 

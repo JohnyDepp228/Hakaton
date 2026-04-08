@@ -31,11 +31,13 @@ private slots:
     void ShowAllHistory();
     void AddHistoryP(int place);
     void ShowMenuAnimation(QWidget *min, int finish_x, int finish_y);
+    void SignalToClose();
 
 signals:
     void UnionClicked();
     void ResetScreen();
     void HistorySide(const QPixmap &img,QString text);
+    void CloseMain();
 
 private:
     Ui::sidemenu *ui;
@@ -46,6 +48,7 @@ private:
     QVBoxLayout *Vlay;
     message *ms;
     int histCount = 0;
+
 };
 
 #endif // SIDEMENU_H

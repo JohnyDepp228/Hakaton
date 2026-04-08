@@ -17,7 +17,8 @@ public:
     explicit Menu(QString email, QString str, QWidget *parent = nullptr);
     ~Menu();
 
-
+signals:
+    void CloseMain();
 
 private slots:
     void on_close_clicked();
@@ -28,9 +29,12 @@ private slots:
 
     QString Encrypt(QString field,int key);
 
+    void SignalToClose();
+
 private:
     Ui::Menu *ui;
     QString email;
+    QString name;
 };
 
 #endif // MENU_H

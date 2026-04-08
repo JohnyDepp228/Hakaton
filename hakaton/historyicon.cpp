@@ -38,7 +38,6 @@ void HistoryIcon::SetHistoryImg(QString login,int place){
             ui->img->setPixmap(scaledPix);
         }
     }
-    qDebug() << "Img get from db";
     db.close();
 }
 
@@ -53,12 +52,10 @@ void HistoryIcon::SetHistoryText(QString login,int place){
         if(SetText.exec() && SetText.next()){
                 QString answer= SetText.value("answer").toString();
                 ui->text->setText(answer);
-                qDebug() << "Text get from db" << answer;
         }
         else
         {
             ui->text->setText("No answer");
-            qDebug() << "No text get from db";
         }
     }
     db.close();
@@ -86,17 +83,12 @@ int HistoryIcon::HistoryCount(QString login){
         }
     }
     db.close();
-    qDebug() << "Read from db " << count;
-    qDebug() << "Read from db " << login;
     return count;
 }
 
 void HistoryIcon::on_History_clicked()
 {
-    std::cout << "Clicked" << std::endl;
     QPixmap px = ui->img->grab();
-    qDebug() << ui->text->text();
-    qDebug() << px;
     emit ShowHistory(px,ui->text->text());
 }
 

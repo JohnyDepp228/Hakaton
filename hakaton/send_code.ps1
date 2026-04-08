@@ -3,8 +3,8 @@ param(
 [string]$Body
 )
 
-$From = "artemmasuk732@gmail.com"
-$password = "dqjydidgmvhzzgev"
+$From = "plantguard.official@gmail.com"
+$password = "xopltrgejjennrnl"
 $Subject = "Code to confirm"
 
 $SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force

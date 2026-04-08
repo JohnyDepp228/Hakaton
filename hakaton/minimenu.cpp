@@ -10,6 +10,9 @@ minimenu::minimenu(QString nameDB, QString emailDB, QWidget *parent)
     name = nameDB;
     setFocusPolicy(Qt::StrongFocus);
     setWindowFlags(Qt::Popup);
+
+    m = new Menu(nameDB,emailDB,this);
+   connect(m,&Menu::CloseMain,this,&minimenu::SignalToClose);
 }
 
 minimenu::~minimenu()
@@ -27,7 +30,6 @@ void minimenu::paintEvent(QPaintEvent *event)
 
 void minimenu::on_settings_clicked()
 {
-    m = new Menu(email,name,this);
     ShowMenuAnimation(m,804,300);
 }
 
@@ -43,18 +45,9 @@ void minimenu::ShowMenuAnimation(QWidget *min,int finish_x,int finish_y){
 
 void minimenu::on_close_clicked()
 {
-    QString appPath = QCoreApplication::applicationDirPath();
-    QString dirPath = appPath + "/Answer";
-    QDir dir;
-    if (!dir.exists(dirPath)) {
-        dir.mkpath(dirPath);
-    }
-    full_path = dirPath + "/answer.txt";
-    if (!full_path.isEmpty()) {
-        QFile file(full_path);
-        if (file.remove()) {
-            std::cout << "File deleted!" << std::endl;
-        }
-    }
     QApplication::quit();
+}
+
+void minimenu::SignalToClose(){
+    emit CloseMain();
 }

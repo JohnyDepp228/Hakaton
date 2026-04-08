@@ -32,8 +32,9 @@ MainWindow::MainWindow(QString str,QString name, QWidget *parent)
     connect(hm, &hidemenu::ResetScreen, this, &MainWindow::Reset);
     connect(m, &message::mes, this, &MainWindow::ShowMsg);
 
-    bool con = connect(men,&sidemenu::HistorySide,this,&MainWindow::ShowTextAndImage);
-    qDebug() << "Connection status:" << con;
+    connect(men,&sidemenu::CloseMain,this,&MainWindow::chekSignal);
+
+    connect(men,&sidemenu::HistorySide,this,&MainWindow::ShowTextAndImage);
 }
 
 MainWindow::~MainWindow()
@@ -44,7 +45,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_load_media_clicked()
 {
-    QString filter = "All file(*.png)";
+    ui->answer->hide();
+    ui->mes->hide();
+    QString filter = "All file(*.png *.jpg *.jpeg *.heic)";
     full_file_name = QFileDialog::getOpenFileName(this,"Выберите медиа",QDir::homePath(),filter);
     if(!full_file_name.isEmpty())
     {
@@ -106,6 +109,11 @@ void MainWindow::ShowMsgAnimation(QLabel *img, int finish_x, int finish_y, int s
     animation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
+void MainWindow::chekSignal()
+{
+    this->close();
+}
+
 void MainWindow::ShowMsg(){
     ui->how_can_help->hide();
     ui->load_media->hide();
@@ -123,7 +131,6 @@ void MainWindow::SetMsgIcon(QString path){
 
 void MainWindow::ShowAnswer(){
     QString LLM_path = qApp->applicationDirPath() + "/LLM/predict.py";
-    qDebug() << LLM_path;
     request = new QProcess(this);
     connect(request,&QProcess::finished,this,[this](){
         QByteArray rawData = request->readAllStandardOutput();
@@ -154,7 +161,8 @@ void MainWindow::SaveImage(QString image_path){
     QByteArray bytes;
     QBuffer buffer(&bytes);
     buffer.open(QIODevice::WriteOnly);
-    pix.save(&buffer,"PNG");
+    QString format = QFileInfo(image_path).suffix().toUpper().toLatin1();
+    pix.save(&buffer,format.toStdString().c_str());
     {
     QSqlQuery AddImag(db);
     AddImag.prepare("INSERT INTO UsersHistory (login,image) VALUES (:user,:img) ");

@@ -17,6 +17,7 @@
 #include <windows.h>
 #include <iostream>
 #include <QProcess>
+#include "menu.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -48,6 +49,11 @@ private slots:
     void ShowSideMenuAnimation(QWidget *min);
     void HideSideMenuAnimation(QWidget *min);
     void ShowMsgAnimation(QLabel *img, int finish_x, int finish_y, int start_x, int start_y);
+
+
+
+
+    void chekSignal();
 signals:
     void CanAddHistory(QString img_path,QString answer);
 private:
@@ -64,5 +70,6 @@ private:
     HistoryIcon *HistoryCout;
     QProcess *request;
     QString answer;
+    Menu *menu;
 };
 #endif // MAINWINDOW_H

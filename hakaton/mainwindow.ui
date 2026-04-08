@@ -241,13 +241,19 @@ QPushButton{
      <rect>
       <x>640</x>
       <y>484</y>
-      <width>859</width>
-      <height>324</height>
+      <width>441</width>
+      <height>491</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="font">
      <font>
-      <pointsize>20</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="styleSheet">
