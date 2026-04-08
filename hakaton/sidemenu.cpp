@@ -78,12 +78,14 @@ void sidemenu::AddHistory(QString img_path,QString answer) {
     bool con = connect(hs, &HistoryIcon::ShowHistory, this, &sidemenu::HistorySide);
     qDebug() << "Conection status in sidemenu" << con;
     Vlay->addWidget(hs);
+    qDebug() << "Get history successfully in sidemenu";
 }
 
 void sidemenu::AddHistoryP(int place) {
     HistoryIcon *hs = new HistoryIcon;
     hs->SetHistoryText(nameDB,place);
     hs->SetHistoryImg(nameDB,place);
+    qDebug() << "Setting history of nameDB" << nameDB;
     bool con = connect(hs, &HistoryIcon::ShowHistory, this, &sidemenu::HistorySide);
     qDebug() << "Conection status in sidemenu" << con;
     Vlay->addWidget(hs);
@@ -98,6 +100,8 @@ void sidemenu::ShowAllHistory() {
             AddHistoryP(i);
         }
     }
+    qDebug() << "Set all history successfully in sidemenu";
+
     delete hs;
 }
 

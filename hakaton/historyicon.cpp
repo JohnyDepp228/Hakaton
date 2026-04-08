@@ -38,6 +38,7 @@ void HistoryIcon::SetHistoryImg(QString login,int place){
             ui->img->setPixmap(scaledPix);
         }
     }
+    qDebug() << "Img get from db";
     db.close();
 }
 
@@ -47,14 +48,17 @@ void HistoryIcon::SetHistoryText(QString login,int place){
         QSqlQuery SetText(db);
         SetText.prepare("SELECT answer FROM UsersHistory WHERE login = :user LIMIT 1 OFFSET :offset");
         SetText.bindValue(":user",login);
+
         SetText.bindValue(":offset",place);
         if(SetText.exec() && SetText.next()){
                 QString answer= SetText.value("answer").toString();
                 ui->text->setText(answer);
+                qDebug() << "Text get from db" << answer;
         }
         else
         {
             ui->text->setText("No answer");
+            qDebug() << "No text get from db";
         }
     }
     db.close();
@@ -75,7 +79,6 @@ int HistoryIcon::HistoryCount(QString login){
         QSqlQuery SetImag(db);
         SetImag.prepare("SELECT * FROM UsersHistory WHERE login = :user");
         SetImag.bindValue(":user",login);
-
         if(SetImag.exec()){
             while(SetImag.next()){
                 count++;
@@ -83,6 +86,8 @@ int HistoryIcon::HistoryCount(QString login){
         }
     }
     db.close();
+    qDebug() << "Read from db " << count;
+    qDebug() << "Read from db " << login;
     return count;
 }
 

@@ -33,7 +33,7 @@ void minimenu::on_settings_clicked()
 
 void minimenu::ShowMenuAnimation(QWidget *min,int finish_x,int finish_y){
     QPropertyAnimation *animation = new QPropertyAnimation(min,"geometry");
-    animation->setDuration(1000);
+    animation->setDuration(500);
     animation->setStartValue(QRect(85,850,1,1));
     animation->setEasingCurve(QEasingCurve::OutQuad);
     animation->setEndValue(QRect(finish_x,finish_y,568,310));
